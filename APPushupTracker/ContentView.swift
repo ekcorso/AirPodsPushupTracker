@@ -8,17 +8,42 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var pushupCount = 8
+    
     var body: some View {
-        VStack {
-            Text("60")
-                .font(.largeTitle)
-                .padding(5)
+        VStack(spacing: 10) {
+            Text("\(pushupCount)")
+                .font(.system(size: 120))
+                .lineLimit(1)
+                .minimumScaleFactor(0.5)
+                .padding(15)
+            
             Button("Start Counting") {
-                // Start the count
+                startCounting()
             }
-//            .clipShape(.capsule)
+            .padding()
+            .font(.headline)
+            .foregroundStyle(.black)
+            .background(.green)
+            .clipShape(.buttonBorder)
+            
+            Button("Stop") {
+                stopCounting()
+            }
+            .padding()
+            .font(.headline)
+            .foregroundStyle(.black)
+            .background(.red)
+            .clipShape(.buttonBorder)
         }
-        .padding()
+    }
+    
+    private func startCounting() {
+        // Begin reading updates from CMHeadphoneMotionManager
+    }
+    
+    private func stopCounting() {
+        // Pause updates
     }
 }
 
