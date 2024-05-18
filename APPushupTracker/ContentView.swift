@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var pushupCount = 8
+    @State private var maxWidth: CGFloat = .zero
     
     var body: some View {
         VStack(spacing: 10) {
@@ -18,23 +19,10 @@ struct ContentView: View {
                 .minimumScaleFactor(0.5)
                 .padding(15)
             
-            Button("Start Counting") {
-                startCounting()
+            VStack(spacing: 10) {
+                ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Start Counting", maxWidth: $maxWidth, action: startCounting)
+                ResizingButton(backgroundColor: .gray, foregroundColor: .black, title: "Stop", maxWidth: $maxWidth, action: stopCounting)
             }
-            .padding()
-            .font(.headline)
-            .foregroundStyle(.black)
-            .background(.green)
-            .clipShape(.buttonBorder)
-            
-            Button("Stop") {
-                stopCounting()
-            }
-            .padding()
-            .font(.headline)
-            .foregroundStyle(.black)
-            .background(.red)
-            .clipShape(.buttonBorder)
         }
     }
     
