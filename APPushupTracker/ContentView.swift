@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(PushupsDetector.self) private var pushupsDetector
+    
     @State private var pushupCount = 8
     @State private var maxWidth: CGFloat = .zero
     
     var body: some View {
         VStack(spacing: 10) {
-            Text("\(pushupCount)")
+            Text("\(pushupsDetector.count)")
                 .font(.system(size: 120))
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
@@ -27,14 +29,19 @@ struct ContentView: View {
     }
     
     private func startCounting() {
-        // Begin reading updates from CMHeadphoneMotionManager
+        if !pushupsDetector.isActive {
+            pushupsDetector.startSession()
+        }
     }
     
     private func stopCounting() {
-        // Pause updates
+        if pushupsDetector.isActive {
+            pushupsDetector.endSession()
+        }
     }
 }
 
 #Preview {
     ContentView()
+        .environmentObject(PushupsDetector())
 }
