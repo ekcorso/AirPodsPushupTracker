@@ -11,7 +11,8 @@ import SwiftUI
 struct APPushupTrackerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TrackerTabBar()
+                .environmentObject(PushupsDetector())
         }
     }
 }
