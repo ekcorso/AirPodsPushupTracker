@@ -12,6 +12,7 @@
 		FC35A0432BF570EA00680D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0422BF570EA00680D70 /* Assets.xcassets */; };
 		FC35A0462BF570EB00680D70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */; };
 		FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91212BFAEDF600B5D714 /* MotionManager.swift */; };
+		FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */; };
 		FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9414942BF8237100692A1F /* ResizingButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,6 +23,7 @@
 		FC35A0422BF570EA00680D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC7B91212BFAEDF600B5D714 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
+		FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupsDetector.swift; sourceTree = "<group>"; };
 		FC9414942BF8237100692A1F /* ResizingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +60,7 @@
 				FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */,
 				FC35A0402BF570E600680D70 /* ContentView.swift */,
 				FC7B91212BFAEDF600B5D714 /* MotionManager.swift */,
+				FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
 				FC35A0422BF570EA00680D70 /* Assets.xcassets */,
 				FC35A0442BF570EB00680D70 /* Preview Content */,
@@ -145,6 +148,7 @@
 			files = (
 				FC35A0412BF570E600680D70 /* ContentView.swift in Sources */,
 				FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */,
+				FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */,
 				FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */,
 				FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */,
 			);
