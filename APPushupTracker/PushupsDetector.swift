@@ -17,10 +17,10 @@ class PushupsDetector {
 
     private var isPushupPhase = false
     
-    private let downThreshold = -0.5
-    private let upThreshold = 0.5
+    private let downThreshold: Double = -0.5
+    private let upThreshold: Double = 0.5
     
-    private let proneThreshold = -1
+    private let proneThreshold: Double = -1
     
     init() {
         self.motionManager = MotionManager()
@@ -49,5 +49,21 @@ class PushupsDetector {
     
     func resetCount() {
         count = 0
+    }
+}
+
+extension PushupsDetector: MotionManagerDelegate {
+    func didUpdateAccelerationY(_ accelerationY: Double) {
+        if accelerationY < downThreshold && !isPushupPhase {
+            // User is movintg downward in a pushup
+            isPushupPhase = true
+        } else if accelerationY > upThreshold && isPushupPhase {
+            incrementCount()
+            isPushupPhase = false
+        }
+    }
+    
+    func didUpdatePitch(_ pitch: Double) {
+        isValidPosition = pitch < proneThreshold
     }
 }
