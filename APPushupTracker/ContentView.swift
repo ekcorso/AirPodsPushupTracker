@@ -15,6 +15,15 @@ struct ContentView: View {
     
     var body: some View {
         VStack(spacing: 10) {
+            Group {
+                if pushupsDetector.isActive && pushupsDetector.isValidPosition {
+                    Text("Good form-- you're ready to go!")
+                        .font(.title)
+                } else {
+                    Text("Get into position!")
+                        .font(.title)
+                }
+            }
             Text("\(pushupsDetector.count)")
                 .font(.system(size: 120))
                 .lineLimit(1)
