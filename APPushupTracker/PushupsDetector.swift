@@ -8,7 +8,7 @@
 import SwiftUI
 
 @Observable
-class PushupsDetector {
+class PushupsDetector: ObservableObject {
     var isActive = false
     var count = 0
     var isValidPosition = false
