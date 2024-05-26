@@ -20,9 +20,9 @@ struct TrackerTabBar: View {
                     Label("Track Pushups", systemImage: "play.circle")
                 }
             
-            ContentView() // TODO: Replace this placeholder
+            PushupChartView()
                 .tabItem {
-                    Label("Track Pushups", systemImage: "play.circle")
+                    Label("TabView", systemImage: "chart.xyaxis.line")
                 }
         }
     }
