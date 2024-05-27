@@ -6,11 +6,17 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     @Environment(PushupsDetector.self) private var pushupsDetector
     
-    @State private var pushupCount = 8
+    @State private var pushupCount = 8 {
+        didSet {
+            AudioServicesPlaySystemSound(1103)
+        }
+    }
+    
     @State private var maxWidth: CGFloat = .zero
     
     var body: some View {
