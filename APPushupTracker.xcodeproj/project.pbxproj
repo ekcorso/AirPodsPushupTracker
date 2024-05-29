@@ -24,6 +24,7 @@
 		FC35A0402BF570E600680D70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FC35A0422BF570EA00680D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FC770BF72C07C092002B0EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FC7B91212BFAEDF600B5D714 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupsDetector.swift; sourceTree = "<group>"; };
 		FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTabBar.swift; sourceTree = "<group>"; };
@@ -61,6 +62,7 @@
 		FC35A03D2BF570E600680D70 /* APPushupTracker */ = {
 			isa = PBXGroup;
 			children = (
+				FC770BF72C07C092002B0EE5 /* Info.plist */,
 				FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */,
 				FC35A0402BF570E600680D70 /* ContentView.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
@@ -292,9 +294,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"APPushupTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = 6Q6H4M39NM;
+				DEVELOPMENT_TEAM = 35FN5AB6A3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = APPushupTracker/Info.plist;
+				INFOPLIST_KEY_NSMotionUsageDescription = "\"This app uses motion data to track exercises\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -321,9 +325,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"APPushupTracker/Preview Content\"";
-				DEVELOPMENT_TEAM = 6Q6H4M39NM;
+				DEVELOPMENT_TEAM = 35FN5AB6A3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = APPushupTracker/Info.plist;
+				INFOPLIST_KEY_NSMotionUsageDescription = "\"This app uses motion data to track exercises\"";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
