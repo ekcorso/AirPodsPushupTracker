@@ -69,7 +69,7 @@ class MotionManager {
             }
             
             DispatchQueue.main.async {
-                self.pitch = motion.userAcceleration.y
+                self.pitch = motion.attitude.pitch
                 self.accelerationY = motion.userAcceleration.y
             }
         }
