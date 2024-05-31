@@ -15,15 +15,11 @@ protocol MotionManagerDelegate: AnyObject {
 
 class MotionManager {
     private var motionManager = CMHeadphoneMotionManager()
-    private var accelerationDataKey = "accelerationData"
-    private var pitchDataKey = "pitchData"
-    
     weak var delegate: MotionManagerDelegate?
-    
     var accelerationData: [Double]
+    var pitchData: [Double]
+    var dataStorage = DataStorage()
     
-    var pitchData: [Double] 
-
     var isActive: Bool {
         motionManager.isDeviceMotionActive
     }
@@ -41,14 +37,15 @@ class MotionManager {
     }
     
     init() {
-        accelerationData = (UserDefaults.standard.array(forKey: accelerationDataKey) as? [Double]) ?? [Double]()
-        pitchData = (UserDefaults.standard.array(forKey: pitchDataKey) as? [Double]) ?? [Double]()
+        accelerationData = dataStorage.retrieveAccelerationData() ?? [Double]()
+        pitchData = dataStorage.retrievePitchData() ?? [Double]()
     }
     
     deinit {
         stopUpdates()
-        self.savePitchData()
-        self.saveAccellerationData()
+        
+        dataStorage.savePitchData(pitchData)
+        dataStorage.saveAccelerationData(accelerationData)
     }
     
     func startUpdates() {
@@ -84,15 +81,5 @@ class MotionManager {
         motionManager.stopDeviceMotionUpdates()
         
         print("[Motion Manager] Stopped updating.")
-    }
-    
-    func saveAccellerationData() {
-        let defaults = UserDefaults.standard
-        defaults.setValue(accelerationData, forKey: accelerationDataKey)
-    }
-    
-    func savePitchData() {
-        let defaults = UserDefaults.standard
-        defaults.setValue(pitchData, forKey: pitchDataKey)
     }
 }
