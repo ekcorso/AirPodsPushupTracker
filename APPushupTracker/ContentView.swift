@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 10) {
             Group {
-                if pushupsDetector.isActive && pushupsDetector.isValidPosition {
+                if pushupsDetector.isValidPosition {
                     Text("Good form-- you're ready to go!")
                         .font(.title)
                 } else {
