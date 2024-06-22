@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ResizingButton: View {
+    // This button will resize to fit the button(s) next to it
     @State private var backgroundColor: Color
     @State private var foregroundColor: Color
     @State private var title: String

@@ -23,7 +23,7 @@ struct ContentView: View {
         VStack(spacing: 10) {
             Group {
                 if pushupsDetector.isValidPosition {
-                    Text("Good form-- you're ready to go!")
+                    Text("Good form-- you're ready to start!")
                         .font(.title)
                 } else {
                     Text("Get into position!")
@@ -37,8 +37,8 @@ struct ContentView: View {
                 .padding(15)
             
             VStack(spacing: 10) {
-                ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Start Counting", maxWidth: $maxWidth, action: startCounting)
-                ResizingButton(backgroundColor: .gray, foregroundColor: .black, title: "Stop", maxWidth: $maxWidth, action: stopCounting)
+                ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Start Counting", maxWidth: $maxWidth, action: startCounting)         // Let's deactivate this button if the session is already active
+                ResizingButton(backgroundColor: .gray, foregroundColor: .black, title: "Stop", maxWidth: $maxWidth, action: stopCounting)         // Let's deactivate this button if the session has not started yet
             }
         }
     }
