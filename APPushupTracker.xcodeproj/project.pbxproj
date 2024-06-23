@@ -17,7 +17,18 @@
 		FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */; };
 		FC7B91282BFBEA2600B5D714 /* PushupChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */; };
 		FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9414942BF8237100692A1F /* ResizingButton.swift */; };
+		FCD9B4DD2C27A09000D616A4 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCD9B4D72C27A07F00D616A4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC35A0332BF570E600680D70 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FC35A03A2BF570E600680D70;
+			remoteInfo = APPushupTracker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FC35A03B2BF570E600680D70 /* APPushupTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPushupTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -32,10 +43,19 @@
 		FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTabBar.swift; sourceTree = "<group>"; };
 		FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupChartView.swift; sourceTree = "<group>"; };
 		FC9414942BF8237100692A1F /* ResizingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingButton.swift; sourceTree = "<group>"; };
+		FCD9B4D32C27A07F00D616A4 /* APPushupTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APPushupTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FC35A0382BF570E600680D70 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCD9B4D02C27A07F00D616A4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -49,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				FC35A03D2BF570E600680D70 /* APPushupTracker */,
+				FCD9B4D42C27A07F00D616A4 /* APPushupTrackerTests */,
 				FC35A03C2BF570E600680D70 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				FC35A03B2BF570E600680D70 /* APPushupTracker.app */,
+				FCD9B4D32C27A07F00D616A4 /* APPushupTrackerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +109,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FCD9B4D42C27A07F00D616A4 /* APPushupTrackerTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */,
+			);
+			path = APPushupTrackerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,6 +137,24 @@
 			productReference = FC35A03B2BF570E600680D70 /* APPushupTracker.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FCD9B4D22C27A07F00D616A4 /* APPushupTrackerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCD9B4D92C27A07F00D616A4 /* Build configuration list for PBXNativeTarget "APPushupTrackerTests" */;
+			buildPhases = (
+				FCD9B4CF2C27A07F00D616A4 /* Sources */,
+				FCD9B4D02C27A07F00D616A4 /* Frameworks */,
+				FCD9B4D12C27A07F00D616A4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCD9B4D82C27A07F00D616A4 /* PBXTargetDependency */,
+			);
+			name = APPushupTrackerTests;
+			productName = APPushupTrackerTests;
+			productReference = FCD9B4D32C27A07F00D616A4 /* APPushupTrackerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -114,11 +162,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1530;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					FC35A03A2BF570E600680D70 = {
 						CreatedOnToolsVersion = 15.3;
+					};
+					FCD9B4D22C27A07F00D616A4 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = FC35A03A2BF570E600680D70;
 					};
 				};
 			};
@@ -136,6 +188,7 @@
 			projectRoot = "";
 			targets = (
 				FC35A03A2BF570E600680D70 /* APPushupTracker */,
+				FCD9B4D22C27A07F00D616A4 /* APPushupTrackerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -147,6 +200,13 @@
 			files = (
 				FC35A0462BF570EB00680D70 /* Preview Assets.xcassets in Resources */,
 				FC35A0432BF570EA00680D70 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCD9B4D12C27A07F00D616A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +228,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FCD9B4CF2C27A07F00D616A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCD9B4DD2C27A09000D616A4 /* DataStorageTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCD9B4D82C27A07F00D616A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FC35A03A2BF570E600680D70 /* APPushupTracker */;
+			targetProxy = FCD9B4D72C27A07F00D616A4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FC35A0472BF570EB00680D70 /* Debug */ = {
@@ -352,6 +428,44 @@
 			};
 			name = Release;
 		};
+		FCD9B4DA2C27A07F00D616A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35FN5AB6A3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emilykcorso.APPushupTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APPushupTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/APPushupTracker";
+			};
+			name = Debug;
+		};
+		FCD9B4DB2C27A07F00D616A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35FN5AB6A3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.emilykcorso.APPushupTrackerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/APPushupTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/APPushupTracker";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -369,6 +483,15 @@
 			buildConfigurations = (
 				FC35A04A2BF570EB00680D70 /* Debug */,
 				FC35A04B2BF570EB00680D70 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCD9B4D92C27A07F00D616A4 /* Build configuration list for PBXNativeTarget "APPushupTrackerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCD9B4DA2C27A07F00D616A4 /* Debug */,
+				FCD9B4DB2C27A07F00D616A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
