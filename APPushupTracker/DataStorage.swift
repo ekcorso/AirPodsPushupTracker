@@ -15,6 +15,13 @@ struct DataStorage {
         static let pitchDataKey = "pitchData"
     }
     
+    func getAveragePitch(_ data: [Double]) -> Double {
+        let pitchSum = data.reduce(0, +)
+        let pitchCount = Double(data.count)
+        
+        return Double(pitchSum/pitchCount)
+    }
+    
     func savePitchData(_ data: [Double]) {
         defaults.setValue(data, forKey: Key.pitchDataKey)
     }
