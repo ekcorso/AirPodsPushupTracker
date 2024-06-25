@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct DataStorage {
+class DataStorage: ObservableObject {
     let defaults = UserDefaults.standard
+   
+    @Published var avgPitch: Double = 0
+    @Published var accelerationData: [Double] = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
+    @Published var pitchData: [Double] = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
+
     
     struct Key {
         static let accelerationDataKey = "accelerationData"
