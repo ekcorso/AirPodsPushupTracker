@@ -10,7 +10,7 @@ import Foundation
 class DataStorage: ObservableObject {
     let defaults = UserDefaults.standard
    
-    @Published var avgPitch: Double = 0
+    @Published var avgPitch: Double = 0 // This could be a computed property
     @Published var accelerationData: [Double] = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
     @Published var pitchData: [Double] = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
 
@@ -29,6 +29,7 @@ class DataStorage: ObservableObject {
     
     func savePitchData(_ data: [Double]) {
         defaults.setValue(data, forKey: Key.pitchDataKey)
+        avgPitch = getAveragePitch(pitchData)
     }
     
     func saveAccelerationData(_ data: [Double]) {
