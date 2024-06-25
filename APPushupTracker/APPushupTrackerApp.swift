@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct APPushupTrackerApp: App {
     @StateObject private var dataStorage = DataStorage()
+    @StateObject private var pushupsDetector = PushupsDetector()
     
     var body: some Scene {
         WindowGroup {
             TrackerTabBar()
-                .environmentObject(PushupsDetector())
+                .environmentObject(pushupsDetector)
                 .environmentObject(dataStorage)
         }
     }

@@ -7,10 +7,11 @@
 
 import SwiftUI
 
-@Observable
 class PushupsDetector: ObservableObject {
     var isActive = false
-    var count = 0
+    
+    @Published var count = 0
+    
     var isValidPosition = false
     
     private let motionManager: MotionManager
