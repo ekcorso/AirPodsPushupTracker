@@ -41,4 +41,5 @@ struct TrackerTabBar: View {
 #Preview {
     TrackerTabBar()
         .environmentObject(PushupsDetector())
+        .environmentObject(DataStorage())
 }
