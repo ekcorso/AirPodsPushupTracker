@@ -18,8 +18,8 @@ class PushupsDetector: ObservableObject {
 
     private var isPushupPhase = false
     
-    private let downThreshold: Double = -0.5
-    private let upThreshold: Double = 0.5
+    private let downThreshold: Double = -0.7
+    private let upThreshold: Double = 0.4
     
     private let proneThreshold: Double = -1
     
