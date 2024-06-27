@@ -54,26 +54,26 @@ class MotionManager {
             return
         }
        
-        if motionManager.isDeviceMotionActive { // TODO: Refactor to use isActive instead
+        if self.isActive {
             print("Device motion is already active")
             return
         }
         
         motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
-            guard let motion = motion, error == nil else { // TODO: Rename motion to deviceMotion
+            guard let deviceMotion = motion, error == nil else {
                 print("An error occured: \(error!.localizedDescription)")
                 return
             }
             
             DispatchQueue.main.async {
-                self.pitch = motion.attitude.pitch
-                self.accelerationY = motion.userAcceleration.y
+                self.pitch = deviceMotion.attitude.pitch
+                self.accelerationY = deviceMotion.userAcceleration.y
             }
         }
     }
     
     func stopUpdates() {
-        guard motionManager.isDeviceMotionActive else { // TODO: Refactor to use isActive instead
+        guard self.isActive else {
             print("Device motion is already stopped")
             return
         }
