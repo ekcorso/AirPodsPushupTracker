@@ -41,6 +41,6 @@ class DataStorage: ObservableObject {
     }
     
     func retrieveAccelerationData() -> [Double]? {
-        return UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]
+        return UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]
     }
 }
