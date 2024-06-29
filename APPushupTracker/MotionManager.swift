@@ -16,10 +16,7 @@ protocol MotionManagerDelegate: AnyObject {
 class MotionManager {
     private var motionManager = CMHeadphoneMotionManager()
     weak var delegate: MotionManagerDelegate?
-    var accelerationData: [Double]
-    var pitchData: [Double]
-    var dataStorage = DataStorage()
-    
+
     var isActive: Bool {
         motionManager.isDeviceMotionActive
     }
@@ -36,16 +33,8 @@ class MotionManager {
         }
     }
     
-    init() {
-        accelerationData = dataStorage.retrieveAccelerationData() ?? [Double]()
-        pitchData = dataStorage.retrievePitchData() ?? [Double]()
-    }
-    
     deinit {
         stopUpdates()
-        
-        dataStorage.savePitchData(pitchData)
-        dataStorage.saveAccelerationData(accelerationData)
     }
     
     func startUpdates() {

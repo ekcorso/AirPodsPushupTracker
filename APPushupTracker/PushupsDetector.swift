@@ -12,6 +12,10 @@ class PushupsDetector: ObservableObject {
     
     @Published var count = 0
     
+    var accelerationData: [Double]
+    var pitchData: [Double]
+    let dataStorage = DataStorage()
+    
     var isValidPosition = false
     
     private let motionManager: MotionManager
@@ -24,6 +28,9 @@ class PushupsDetector: ObservableObject {
     private let proneThreshold: Double = -1
     
     init() {
+        accelerationData = dataStorage.retrieveAccelerationData() ?? [Double]()
+        pitchData = dataStorage.retrievePitchData() ?? [Double]()
+        
         self.motionManager = MotionManager()
         motionManager.delegate = self
     }
@@ -41,6 +48,9 @@ class PushupsDetector: ObservableObject {
     func endSession() {
         motionManager.stopUpdates()
         isActive = false
+        
+        dataStorage.savePitchData(pitchData)
+        dataStorage.saveAccelerationData(accelerationData)
         print("Session ended.")
     }
     
@@ -55,6 +65,8 @@ class PushupsDetector: ObservableObject {
 
 extension PushupsDetector: MotionManagerDelegate {
     func didUpdateAccelerationY(_ accelerationY: Double) {
+        accelerationData.append(accelerationY)
+        
         if accelerationY < downThreshold && !isPushupPhase {
             // User is movintg downward in a pushup
             isPushupPhase = true
@@ -65,6 +77,8 @@ extension PushupsDetector: MotionManagerDelegate {
     }
     
     func didUpdatePitch(_ pitch: Double) {
+        pitchData.append(pitch)
+        
         isValidPosition = pitch < proneThreshold
     }
 }
