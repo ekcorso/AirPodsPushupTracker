@@ -12,7 +12,12 @@ class DataStorage: ObservableObject {
    
     @Published var avgPitch: Double = 0 // This could be a computed property
     @Published var accelerationData: [Double] = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
-    @Published var pitchData: [Double] = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
+    
+    @Published var pitchData: [Double] = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]() {
+        didSet {
+            self.avgPitch = getAveragePitch(pitchData)
+        }
+    }
 
     
     struct Key {
@@ -29,7 +34,6 @@ class DataStorage: ObservableObject {
     
     func savePitchData(_ data: [Double]) {
         defaults.setValue(data, forKey: Key.pitchDataKey)
-        avgPitch = getAveragePitch(pitchData)
     }
     
     func saveAccelerationData(_ data: [Double]) {
