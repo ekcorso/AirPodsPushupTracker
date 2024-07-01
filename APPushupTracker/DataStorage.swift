@@ -26,6 +26,8 @@ class DataStorage: ObservableObject {
     }
     
     func getAveragePitch(_ data: [Double]) -> Double {
+        guard data.count != 0 else { return 0 }
+        
         let pitchSum = data.reduce(0, +)
         let pitchCount = Double(data.count)
         
