@@ -38,6 +38,8 @@ class DataStorage: ObservableObject {
     func savePitchData(_ data: [Double]) {
         defaults.setValue(data, forKey: Key.pitchDataKey)
         pitchData.append(contentsOf: data)
+        
+        avgPitch = getAveragePitch(pitchData)
     }
     
     func saveAccelerationData(_ data: [Double]) {
