@@ -19,6 +19,11 @@ struct PushupChartView: View {
                 .padding(10)
             Text("Average acceleration down: \(dataStorage.avgDownAcceleration)")
                 .padding(10)
+            Button("Print data") {
+                print("The averagePitch is: \(dataStorage.avgPitch)")
+                print("The pitchData is: \(dataStorage.pitchData)")
+                print("The accelerationData is: \(dataStorage.accelerationData)")
+            }
             Text("Acceleration Data")
             Chart {
                 ForEach(Array(zip(dataStorage.accelerationData.indices, dataStorage.accelerationData)), id: \.0) { item in
