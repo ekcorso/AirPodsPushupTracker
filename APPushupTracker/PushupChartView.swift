@@ -14,7 +14,11 @@ struct PushupChartView: View {
     var body: some View {
         VStack {
             Text("Average pitch: \(dataStorage.avgPitch)")
-                .padding(30)
+                .padding(10)
+            Text("Average acceleration up: \(dataStorage.avgUpAcceleration)")
+                .padding(10)
+            Text("Average acceleration down: \(dataStorage.avgDownAcceleration)")
+                .padding(10)
             Text("Acceleration Data")
             Chart {
                 ForEach(Array(zip(dataStorage.accelerationData.indices, dataStorage.accelerationData)), id: \.0) { item in
