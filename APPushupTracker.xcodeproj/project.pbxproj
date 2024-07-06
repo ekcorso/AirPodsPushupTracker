@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC33C8182C39EB2A00CD0008 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33C8172C39EB2A00CD0008 /* NumberFormatter+Extensions.swift */; };
 		FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */; };
 		FC35A0412BF570E600680D70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A0402BF570E600680D70 /* ContentView.swift */; };
 		FC35A0432BF570EA00680D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0422BF570EA00680D70 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC33C8172C39EB2A00CD0008 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		FC35A03B2BF570E600680D70 /* APPushupTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPushupTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPushupTrackerApp.swift; sourceTree = "<group>"; };
 		FC35A0402BF570E600680D70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
 				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
+				FC33C8172C39EB2A00CD0008 /* NumberFormatter+Extensions.swift */,
 				FC35A0422BF570EA00680D70 /* Assets.xcassets */,
 				FC35A0442BF570EB00680D70 /* Preview Content */,
 			);
@@ -223,6 +226,7 @@
 				FC770BF92C097DA9002B0EE5 /* DataStorage.swift in Sources */,
 				FC7B91282BFBEA2600B5D714 /* PushupChartView.swift in Sources */,
 				FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */,
+				FC33C8182C39EB2A00CD0008 /* NumberFormatter+Extensions.swift in Sources */,
 				FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */,
 				FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */,
 			);
