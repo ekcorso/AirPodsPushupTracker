@@ -22,7 +22,7 @@ struct TrackerTabBar: View {
             
             PushupChartView()
                 .tabItem {
-                    Label("TabView", systemImage: "chart.xyaxis.line")
+                    Label("Data", systemImage: "chart.xyaxis.line")
                 }
         }
     }
