@@ -11,6 +11,8 @@ class DataStorage: ObservableObject {
     let defaults = UserDefaults.standard
   
     @Published var avgPitch: Double = 0
+    @Published var avgUpAcceleration: Double = 0
+    @Published var avgDownAcceleration: Double = 0
     @Published var accelerationData: [Double]
     @Published var pitchData: [Double]
 
@@ -19,6 +21,8 @@ class DataStorage: ObservableObject {
         pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
         
         avgPitch = getAveragePitch(pitchData)
+        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
+        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
     }
     
     struct Key {
@@ -69,6 +73,9 @@ class DataStorage: ObservableObject {
     func saveAccelerationData(_ data: [Double]) {
         defaults.setValue(data, forKey: Key.accelerationDataKey)
         accelerationData.append(contentsOf: data)
+        
+        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
+        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
     }
     
     func retrievePitchData() -> [Double]? {
