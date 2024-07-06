@@ -25,6 +25,9 @@ struct PushupChartView: View {
                     LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1))
                 }
             }
+            .chartYAxis() {
+                AxisMarks(values: .stride(by: 0.2))
+            }
         }
     }
 }
