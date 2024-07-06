@@ -23,9 +23,9 @@ class PushupsDetector: ObservableObject {
     private var isPushupPhase = false
     
     private let downThreshold: Double = -0.7
-    private let upThreshold: Double = 0.4
+    private let upThreshold: Double = 0.3
     
-    private let proneThreshold: Double = -1
+    private let proneThreshold: Double = -0.8
     
     init() {
         accelerationData = dataStorage.retrieveAccelerationData() ?? [Double]()
