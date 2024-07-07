@@ -32,7 +32,7 @@ class DataStorage {
         static let pitchDataKey = "pitchData"
     }
     
-    func getAveragePitch(_ data: [Double]) -> Double {
+    private func getAveragePitch(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
         
         let pitchSum = data.reduce(0, +)
@@ -41,7 +41,7 @@ class DataStorage {
         return Double(pitchSum/pitchCount)
     }
     
-    func getAvgUpAcceleration(_ data: [Double]) -> Double {
+    private func getAvgUpAcceleration(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
 
         let upAccData = data.filter() { $0 >= 0.3 }
@@ -53,7 +53,7 @@ class DataStorage {
         return avgUpAcc
     }
     
-    func getAvgDownAcceleration(_ data: [Double]) -> Double {
+    private func getAvgDownAcceleration(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
 
         let downAccData = data.filter() { $0 <= -0.7 }
