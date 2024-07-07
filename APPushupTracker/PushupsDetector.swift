@@ -14,7 +14,7 @@ class PushupsDetector: ObservableObject {
     
     var accelerationData: [Double]
     var pitchData: [Double]
-    let dataStorage = DataStorage()
+    let dataStorage = PushupChartViewViewModel()
     
     var isValidPosition = false
     

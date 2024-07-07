@@ -1,5 +1,5 @@
 //
-//  DataStorage.swift
+//  PushupChartViewViewModel.swift
 //  APPushupTracker
 //
 //  Created by Emily Corso on 5/30/24.
@@ -9,7 +9,7 @@ import Foundation
 import Observation
 
 @Observable
-class DataStorage {
+class PushupChartViewViewModel {
     let defaults = UserDefaults.standard
   
     var avgPitch: Double = 0

@@ -16,7 +16,7 @@ final class DataStorageTests: XCTestCase {
         let expectedAveragePitch = 1.1625
         
         // Act
-        let result = DataStorage().getAveragePitch(pitches)
+        let result = PushupChartViewViewModel().getAveragePitch(pitches)
         
         // Assert
         XCTAssertEqual(expectedAveragePitch, result)

@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct APPushupTrackerApp: App {
-    @Environment(DataStorage.self) private var dataStorage
+    @Environment(PushupChartViewViewModel.self) private var dataStorage
     @StateObject private var pushupsDetector = PushupsDetector()
     
     var body: some Scene {

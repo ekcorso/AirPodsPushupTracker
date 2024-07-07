@@ -12,7 +12,7 @@
 		FC35A0412BF570E600680D70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A0402BF570E600680D70 /* ContentView.swift */; };
 		FC35A0432BF570EA00680D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0422BF570EA00680D70 /* Assets.xcassets */; };
 		FC35A0462BF570EB00680D70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */; };
-		FC770BF92C097DA9002B0EE5 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC770BF82C097DA9002B0EE5 /* DataStorage.swift */; };
+		FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */; };
 		FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91212BFAEDF600B5D714 /* MotionManager.swift */; };
 		FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */; };
 		FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */; };
@@ -39,7 +39,7 @@
 		FC35A0422BF570EA00680D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC770BF72C07C092002B0EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		FC770BF82C097DA9002B0EE5 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupChartViewViewModel.swift; sourceTree = "<group>"; };
 		FC7B91212BFAEDF600B5D714 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupsDetector.swift; sourceTree = "<group>"; };
 		FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTabBar.swift; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 				FC35A0402BF570E600680D70 /* ContentView.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
 				FC7B91212BFAEDF600B5D714 /* MotionManager.swift */,
-				FC770BF82C097DA9002B0EE5 /* DataStorage.swift */,
+				FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */,
 				FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
 				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
@@ -223,7 +223,7 @@
 				FC35A0412BF570E600680D70 /* ContentView.swift in Sources */,
 				FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */,
 				FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */,
-				FC770BF92C097DA9002B0EE5 /* DataStorage.swift in Sources */,
+				FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */,
 				FC7B91282BFBEA2600B5D714 /* PushupChartView.swift in Sources */,
 				FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */,
 				FC33C8182C39EB2A00CD0008 /* NumberFormatter+Extensions.swift in Sources */,
