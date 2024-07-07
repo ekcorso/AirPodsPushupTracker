@@ -6,15 +6,17 @@
 //
 
 import Foundation
+import Observation
 
-class DataStorage: ObservableObject {
+@Observable
+class DataStorage {
     let defaults = UserDefaults.standard
   
-    @Published var avgPitch: Double = 0
-    @Published var avgUpAcceleration: Double = 0
-    @Published var avgDownAcceleration: Double = 0
-    @Published var accelerationData: [Double]
-    @Published var pitchData: [Double]
+    var avgPitch: Double = 0
+    var avgUpAcceleration: Double = 0
+    var avgDownAcceleration: Double = 0
+    var accelerationData: [Double]
+    var pitchData: [Double]
 
     init() {
         accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
