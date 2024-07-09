@@ -15,20 +15,19 @@ class PushupChartViewViewModel {
     var avgPitch: Double = 0
     var avgUpAcceleration: Double = 0
     var avgDownAcceleration: Double = 0
+    
     var accelerationData: [Double]
     var pitchData: [Double]
 
-    init(dataStore: DataStore) {
+    init(dataStore: DataStore) async {
         self.dataStore = dataStore
-        self.accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
-        self.pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
+        self.accelerationData = await dataStore.retrieveAccelerationData() ?? [Double]()
+        self.pitchData = await dataStore.retrieveAccelerationData() ?? [Double]()
         
-//        avgPitch = getAveragePitch(pitchData)
-//        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
-//        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
+        self.avgPitch = getAveragePitch(pitchData)
+        self.avgUpAcceleration = getAvgUpAcceleration(accelerationData)
+        self.avgDownAcceleration = getAvgDownAcceleration(accelerationData)
     }
-    
-
     
     private func getAveragePitch(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
