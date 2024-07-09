@@ -10,27 +10,25 @@ import Observation
 
 @Observable
 class PushupChartViewViewModel {
-    let defaults = UserDefaults.standard
-  
+    let dataStore: DataStore
+    
     var avgPitch: Double = 0
     var avgUpAcceleration: Double = 0
     var avgDownAcceleration: Double = 0
     var accelerationData: [Double]
     var pitchData: [Double]
 
-    init() {
-        accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
-        pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
+    init(dataStore: DataStore) {
+        self.dataStore = dataStore
+        self.accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
+        self.pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
         
-        avgPitch = getAveragePitch(pitchData)
-        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
-        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
+//        avgPitch = getAveragePitch(pitchData)
+//        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
+//        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
     }
     
-    struct Key {
-        static let accelerationDataKey = "accelerationData"
-        static let pitchDataKey = "pitchData"
-    }
+
     
     private func getAveragePitch(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
@@ -63,28 +61,5 @@ class PushupChartViewViewModel {
         let avgDownAcc = Double(downAccData.reduce(0, +)) / Double(downAccData.count)
         
         return avgDownAcc
-    }
-    
-    func savePitchData(_ data: [Double]) {
-        defaults.setValue(data, forKey: Key.pitchDataKey)
-        pitchData.append(contentsOf: data)
-        
-        avgPitch = getAveragePitch(pitchData)
-    }
-    
-    func saveAccelerationData(_ data: [Double]) {
-        defaults.setValue(data, forKey: Key.accelerationDataKey)
-        accelerationData.append(contentsOf: data)
-        
-        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
-        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
-    }
-    
-    func retrievePitchData() -> [Double]? {
-        return UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]
-    }
-    
-    func retrieveAccelerationData() -> [Double]? {
-        return UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]
     }
 }

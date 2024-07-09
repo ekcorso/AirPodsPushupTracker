@@ -7,12 +7,43 @@
 
 import Foundation
 
-    let defaults = UserDefaults.standard
-
 actor DataStore {
+    static let shared = DataStore()
+    
+    private let defaults = UserDefaults.standard
+    private var accelerationData: [Double]
+    private var pitchData: [Double]
+    
+    struct Key {
+        static let accelerationDataKey = "accelerationData"
+        static let pitchDataKey = "pitchData"
+    }
     
     init() {
-        accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
-        pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
+        self.accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
+        self.pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
+    }
+    
+    func savePitchData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.pitchDataKey)
+        pitchData.append(contentsOf: data)
+        
+//        avgPitch = getAveragePitch(pitchData)
+    }
+    
+    func saveAccelerationData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.accelerationDataKey)
+        accelerationData.append(contentsOf: data)
+        
+//        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
+//        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
+    }
+    
+    func retrievePitchData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]
+    }
+    
+    func retrieveAccelerationData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]
     }
 }
