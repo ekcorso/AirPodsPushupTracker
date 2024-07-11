@@ -40,6 +40,12 @@ class PushupsDetector {
         endSession()
     }
     
+    // Must call this before utilizing this class
+    func initializePitchAndAccelerationData() async {
+        accelerationData = await dataStore.retrieveAccelerationData() ?? [Double]()
+        pitchData = await dataStore.retrievePitchData() ?? [Double]()
+    }
+    
     func startSession() {
         print("Starting session...")
         motionManager.startUpdates()
