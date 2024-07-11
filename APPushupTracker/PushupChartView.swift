@@ -38,6 +38,8 @@ struct PushupChartView: View {
 }
 
 #Preview {
+    let dataStore: DataStore = DataStore()
+
     PushupChartView()
-        .environment(PushupChartViewViewModel())
+        .environment(PushupChartViewViewModel(dataStore: dataStore))
 }
