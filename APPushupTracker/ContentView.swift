@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct ContentView: View {
-    @EnvironmentObject var pushupsDetector: PushupsDetector
+    @Environment(PushupsDetector.self) private var pushupsDetector
     
     @State private var pushupCount = 8 {
         didSet {
@@ -53,10 +53,13 @@ struct ContentView: View {
         if pushupsDetector.isActive {
             pushupsDetector.endSession()
         }
+        Task {
+            await pushupsDetector.savePitchAndAccelerationData()
+        }
     }
 }
 
 #Preview {
     ContentView()
-        .environmentObject(PushupsDetector())
+        .environment(PushupsDetector())
 }

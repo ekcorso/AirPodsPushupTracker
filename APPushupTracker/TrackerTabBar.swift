@@ -40,6 +40,4 @@ struct TrackerTabBar: View {
 
 #Preview {
     TrackerTabBar()
-        .environmentObject(PushupsDetector())
-        .environment(PushupChartViewViewModel())
 }

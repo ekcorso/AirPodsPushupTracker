@@ -29,7 +29,7 @@ class PushupChartViewViewModel {
         self.avgDownAcceleration = getAvgDownAcceleration(accelerationData)
     }
     
-    private func getAveragePitch(_ data: [Double]) -> Double {
+    func getAveragePitch(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
         
         let pitchSum = data.reduce(0, +)

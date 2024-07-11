@@ -7,14 +7,15 @@
 
 import SwiftUI
 
-class PushupsDetector: ObservableObject {
+@Observable
+class PushupsDetector {
     var isActive = false
     
-    @Published var count = 0
+    var count = 0
     
     var accelerationData: [Double]
     var pitchData: [Double]
-    let dataStorage = PushupChartViewViewModel()
+    let dataStore = DataStore.shared
     
     var isValidPosition = false
     
@@ -28,8 +29,8 @@ class PushupsDetector: ObservableObject {
     private let proneThreshold: Double = -0.8
     
     init() {
-        accelerationData = dataStorage.retrieveAccelerationData() ?? [Double]()
-        pitchData = dataStorage.retrievePitchData() ?? [Double]()
+        self.accelerationData = [Double]()
+        self.pitchData = [Double]()
         
         self.motionManager = MotionManager()
         motionManager.delegate = self
@@ -49,9 +50,12 @@ class PushupsDetector: ObservableObject {
         motionManager.stopUpdates()
         isActive = false
         
-        dataStorage.savePitchData(pitchData)
-        dataStorage.saveAccelerationData(accelerationData)
         print("Session ended.")
+    }
+    
+    func savePitchAndAccelerationData() async {
+        await dataStore.savePitchData(pitchData)
+        await dataStore.saveAccelerationData(accelerationData)
     }
     
     func incrementCount() {
