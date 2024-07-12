@@ -41,6 +41,7 @@ struct ContentView: View {
                 ResizingButton(backgroundColor: .gray, foregroundColor: .black, title: "Stop", maxWidth: $maxWidth, action: stopCounting)         // Let's deactivate this button if the session has not started yet
             }
         }
+        .environment(pushupsDetector)
     }
     
     private func startCounting() {
