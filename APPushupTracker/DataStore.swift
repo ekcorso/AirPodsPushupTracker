@@ -39,11 +39,11 @@ actor DataStore {
 //        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
     }
     
-    func retrievePitchData() -> [Double]? {
+    nonisolated func retrievePitchData() -> [Double]? {
         return UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]
     }
     
-    func retrieveAccelerationData() -> [Double]? {
+    nonisolated func retrieveAccelerationData() -> [Double]? {
         return UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]
     }
 }

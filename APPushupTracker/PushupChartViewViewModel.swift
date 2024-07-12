@@ -21,8 +21,8 @@ class PushupChartViewViewModel {
 
     init(dataStore: DataStore) async {
         self.dataStore = dataStore
-        self.accelerationData = await dataStore.retrieveAccelerationData() ?? [Double]()
-        self.pitchData = await dataStore.retrieveAccelerationData() ?? [Double]()
+        self.accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
+        self.pitchData = dataStore.retrieveAccelerationData() ?? [Double]()
         
         self.avgPitch = getAveragePitch(pitchData)
         self.avgUpAcceleration = getAvgUpAcceleration(accelerationData)
