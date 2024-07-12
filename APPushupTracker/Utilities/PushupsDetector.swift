@@ -41,9 +41,9 @@ class PushupsDetector {
     }
     
     // Must call this before utilizing this class
-    func initializePitchAndAccelerationData() async {
-        accelerationData = await dataStore.retrieveAccelerationData() ?? [Double]()
-        pitchData = await dataStore.retrievePitchData() ?? [Double]()
+    func initializePitchAndAccelerationData() {
+        accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
+        pitchData = dataStore.retrievePitchData() ?? [Double]()
     }
     
     func startSession() {

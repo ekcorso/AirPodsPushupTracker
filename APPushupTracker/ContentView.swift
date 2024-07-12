@@ -45,10 +45,7 @@ struct ContentView: View {
     }
     
     private func startCounting() {
-        Task {
-            await self.pushupsDetector.initializePitchAndAccelerationData()
-
-        }
+        self.pushupsDetector.initializePitchAndAccelerationData()
         
         if !pushupsDetector.isActive {
             pushupsDetector.startSession()
