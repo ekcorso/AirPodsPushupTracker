@@ -19,7 +19,7 @@ actor DataStore {
         static let pitchDataKey = "pitchData"
     }
     
-    init() {
+    private init() {
         self.accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
         self.pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
     }

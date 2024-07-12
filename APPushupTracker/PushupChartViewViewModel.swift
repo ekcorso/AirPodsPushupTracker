@@ -10,17 +10,16 @@ import Observation
 
 @Observable
 class PushupChartViewViewModel {
-    let dataStore: DataStore
+    let dataStore: DataStore = DataStore.shared
     
     var avgPitch: Double = 0
     var avgUpAcceleration: Double = 0
     var avgDownAcceleration: Double = 0
     
-    var accelerationData: [Double]
-    var pitchData: [Double]
+    var accelerationData: [Double] = [0.0]
+    var pitchData: [Double] = [0.0]
 
-    init(dataStore: DataStore) async {
-        self.dataStore = dataStore
+    init() {
         self.accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
         self.pitchData = dataStore.retrieveAccelerationData() ?? [Double]()
         
