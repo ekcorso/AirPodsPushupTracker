@@ -13,11 +13,11 @@ struct PushupChartView: View {
     
     var body: some View {
         VStack {
-            Text("Average pitch: \(viewModel.avgPitch)")
+            Text("Average pitch: \(decimalFormatter.string(from: viewModel.avgPitch))")
                 .padding(10)
-            Text("Average acceleration up: \(viewModel.avgUpAcceleration)")
+            Text("Average acceleration up: \(decimalFormatter.string(from: viewModel.avgUpAcceleration))")
                 .padding(10)
-            Text("Average acceleration down: \(viewModel.avgDownAcceleration)")
+            Text("Average acceleration down: \(decimalFormatter.string(from: viewModel.avgDownAcceleration))")
                 .padding(10)
             Button("Print data") {
                 print("The averagePitch is: \(viewModel.avgPitch)")
