@@ -19,6 +19,7 @@ let decimalFormatter: NumberFormatter = {
 
 extension NumberFormatter {
     func string(from value: Double) -> String {
-        return self.string(from: NSNumber(value: value)) ?? ""
+        let formattedValue = self.string(from: NSNumber(value: value)) ?? ""
+        return (formattedValue == "-0") ? "0" : formattedValue // Workaround for -0
     }
 }
