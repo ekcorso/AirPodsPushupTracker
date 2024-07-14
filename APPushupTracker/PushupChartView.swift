@@ -34,6 +34,9 @@ struct PushupChartView: View {
                 AxisMarks(values: .stride(by: 0.2))
             }
         }
+        .onAppear {
+            viewModel.updateAllProperties()
+        }
     }
 }
 
