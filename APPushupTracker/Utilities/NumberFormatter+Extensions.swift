@@ -12,7 +12,7 @@ let decimalFormatter: NumberFormatter = {
     let formatter = NumberFormatter()
     
     formatter.numberStyle = .decimal
-    formatter.maximumFractionDigits = 2
+    formatter.maximumFractionDigits = 4
     
     return formatter
 }()
