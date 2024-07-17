@@ -42,7 +42,7 @@ I am currently working on expanding the concept to detect and track other exerci
 
 ## Screenshots
 
-*Include screenshots of the main view and chart view here.*
+(Screenshots/ Demos coming soon!)
 
 ## Acknowledgements
 
