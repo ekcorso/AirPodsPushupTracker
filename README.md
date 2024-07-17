@@ -29,6 +29,17 @@ This project uses updates from CoreMotion, a little data analysis, and SwiftUI t
 - **Pushup Tracking**: Counts pushups in real-time using CoreMotion updates from AirPods.
 - **Data Visualization**: Displays average pitch and acceleration across pushup sessions. Helps calibrate pushup detection based on user's movement pattern.
 
+### Possible Future Expansions
+- Tracking reps across sessions. This may require a reset button or weekly/monthly reset intervals.
+- Displaying cumulative reps across all sessions as well as the current session.
+- Viewing rep count per month or week over time for comparison.
+- Generalizing the calibration process to tune the rep thresholds based on user's initial pushups and subsequent movement over time. (As opposed to basing the threshold of off only *my* pushups.)
+
+I am currently working on expanding the concept to detect and track other exercises as well, such as:
+- Squats
+- Jumping jacks
+- Sit-ups
+
 ## Screenshots
 
 *Include screenshots of the main view and chart view here.*
