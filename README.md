@@ -13,7 +13,8 @@ This project uses updates from CoreMotion, a little data analysis, and SwiftUI t
     cd pushup-tracker
     open PushupTracker.xcodeproj
     ```
-3. Build and run the project on your preferred device.
+3. Build and run the project on your preferred device. 
+Note: sensor data like that delivered by AirPods cannot by accessed by the Xcode simulator, so full testing will require building the app to a physical device.  
 
 ## Usage
 
