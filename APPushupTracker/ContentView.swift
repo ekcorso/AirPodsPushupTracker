@@ -60,6 +60,22 @@ struct ContentView: View {
             await pushupsDetector.savePitchAndAccelerationData()
         }
     }
+    
+    private func getText() -> String {
+        var text = ""
+        guard pushupsDetector.isActive else {
+            text = "AirPods not connects"
+            return text
+        }
+        
+        if pushupsDetector.isValidPosition {
+            text = String("You're ready 😎")
+        } else {
+           text = "Get in position!"
+        }
+        
+        return text
+    }
 }
 
 #Preview {
