@@ -18,6 +18,7 @@ struct ContentView: View {
     }
     
     @State private var maxWidth: CGFloat = .zero
+    private let startText = "Press start to begin"
     
     var body: some View {
         VStack(spacing: 10) {
@@ -59,10 +60,12 @@ struct ContentView: View {
         Task {
             await pushupsDetector.savePitchAndAccelerationData()
         }
+        
     }
     
     private func getText() -> String {
-        var text = ""
+        var text = startText
+        
         guard pushupsDetector.isActive else {
             return text
         }
@@ -73,9 +76,9 @@ struct ContentView: View {
         }
         
         if pushupsDetector.isValidPosition {
-            text = String("You're ready 😎")
+            text = "You're ready 😎"
         } else {
-           text = "Get in position!"
+            text = "Get in position!"
         }
         
         return text
