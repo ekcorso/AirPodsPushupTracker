@@ -37,6 +37,10 @@ class MotionManager {
         stopUpdates()
     }
     
+    func isDeviceMotionAvailable() -> Bool {
+        return motionManager.isDeviceMotionAvailable
+    }
+    
     func startUpdates() {
         guard motionManager.isDeviceMotionAvailable else {
             print("Device motion is not available")

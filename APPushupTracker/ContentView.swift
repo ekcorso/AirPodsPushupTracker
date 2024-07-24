@@ -64,7 +64,11 @@ struct ContentView: View {
     private func getText() -> String {
         var text = ""
         guard pushupsDetector.isActive else {
-            text = "AirPods not connects"
+            return text
+        }
+        
+        guard pushupsDetector.isDeviceMotionAvailable() else {
+            text = "AirPods not connected"
             return text
         }
         

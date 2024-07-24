@@ -64,6 +64,10 @@ class PushupsDetector {
         await dataStore.saveAccelerationData(accelerationData)
     }
     
+    func isDeviceMotionAvailable() -> Bool {
+        return motionManager.isDeviceMotionAvailable()
+    }
+    
     func incrementCount() {
         count += 1
     }
