@@ -18,18 +18,34 @@ struct ContentView: View {
     }
     
     @State private var maxWidth: CGFloat = .zero
+    
     private let startText = "Press start to begin"
+    
+    private var instructionText: String {
+        var text = startText
+        
+        guard pushupsDetector.isActive else {
+            return text
+        }
+        
+        guard pushupsDetector.isDeviceMotionAvailable() else {
+            text = "AirPods not connected"
+            return text
+        }
+        
+        if pushupsDetector.isValidPosition {
+            text = "You're ready 😎"
+        } else {
+            text = "Get in position!"
+        }
+        
+        return text
+    }
     
     var body: some View {
         VStack(spacing: 10) {
             Group {
-                if pushupsDetector.isValidPosition {
-                    Text("Good form-- you're ready to start!")
-                        .font(.title)
-                } else {
-                    Text("Get into position!")
-                        .font(.title)
-                }
+                Text(instructionText)
             }
             Text("\(pushupsDetector.count)")
                 .font(.system(size: 120))
@@ -60,28 +76,6 @@ struct ContentView: View {
         Task {
             await pushupsDetector.savePitchAndAccelerationData()
         }
-        
-    }
-    
-    private func getText() -> String {
-        var text = startText
-        
-        guard pushupsDetector.isActive else {
-            return text
-        }
-        
-        guard pushupsDetector.isDeviceMotionAvailable() else {
-            text = "AirPods not connected"
-            return text
-        }
-        
-        if pushupsDetector.isValidPosition {
-            text = "You're ready 😎"
-        } else {
-            text = "Get in position!"
-        }
-        
-        return text
     }
 }
 
