@@ -41,9 +41,11 @@ I am currently working on expanding the concept to detect and track other exerci
 - Jumping jacks
 - Sit-ups
 
-## Screenshots
+## Demo
 
-(Screenshots/ Demos coming soon!)
+<p align="center">
+  <video src="https://github.com/user-attachments/assets/2c8e9767-75f3-4b44-8495-d24819d5fed9"></video>
+</p>
 
 ## Acknowledgements
 
