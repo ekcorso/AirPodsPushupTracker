@@ -20,6 +20,7 @@
 		FC91DF3C2C3B611B00FBB2B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91DF3B2C3B611B00FBB2B7 /* DataStore.swift */; };
 		FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9414942BF8237100692A1F /* ResizingButton.swift */; };
 		FCD9B4DD2C27A09000D616A4 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */; };
+		FCDFA4102C55BD8C00C5A425 /* ExerciseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FC9414942BF8237100692A1F /* ResizingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingButton.swift; sourceTree = "<group>"; };
 		FCD9B4D32C27A07F00D616A4 /* APPushupTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APPushupTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
+		FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				FC770BF72C07C092002B0EE5 /* Info.plist */,
 				FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */,
 				FC35A0402BF570E600680D70 /* ContentView.swift */,
+				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
 				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
@@ -233,6 +236,7 @@
 			files = (
 				FC35A0412BF570E600680D70 /* ContentView.swift in Sources */,
 				FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */,
+				FCDFA4102C55BD8C00C5A425 /* ExerciseSelectionViewController.swift in Sources */,
 				FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */,
 				FC91DF3C2C3B611B00FBB2B7 /* DataStore.swift in Sources */,
 				FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */,
