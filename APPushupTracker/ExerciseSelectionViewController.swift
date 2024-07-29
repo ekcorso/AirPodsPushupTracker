@@ -11,19 +11,21 @@ struct ExerciseSelectionViewController: View {
     @State private var maxWidth: CGFloat = .zero
 
     var body: some View {
-        Text("Select an exercise")
-            .padding(30)
-            .font(.title)
-        
-        VStack(spacing: 15) {
-            ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Pushups", maxWidth: $maxWidth) {
-                
-            }
-            ResizingButton(backgroundColor: .green, foregroundColor: .white, title: "Squats", maxWidth: $maxWidth) {
-                
-            }
-            ResizingButton(backgroundColor: .orange, foregroundColor: .white, title: "Situps", maxWidth: $maxWidth) {
-                
+        VStack {
+            Text("Select an exercise")
+                .padding(30)
+                .font(.title)
+            
+            VStack(spacing: 15) {
+                ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Pushups", maxWidth: $maxWidth) {
+                    
+                }
+                ResizingButton(backgroundColor: .green, foregroundColor: .white, title: "Squats", maxWidth: $maxWidth) {
+                    
+                }
+                ResizingButton(backgroundColor: .orange, foregroundColor: .white, title: "Situps", maxWidth: $maxWidth) {
+                    
+                }
             }
         }
     }
