@@ -15,11 +15,10 @@ struct TrackerTabBar: View {
     
     var body: some View {
         TabView {
-            PushupCountViewController()
+            ExerciseSelectionViewController()
                 .tabItem {
-                    Label("Track Pushups", systemImage: "play.circle")
+                    Label("Select Exercise", systemImage: "figure.run")
                 }
-            
             PushupChartView()
                 .tabItem {
                     Label("Data", systemImage: "chart.xyaxis.line")
@@ -40,6 +39,5 @@ struct TrackerTabBar: View {
 
 #Preview {
     TrackerTabBar()
-        .environment(PushupsDetector())
         .environment(PushupChartViewViewModel())
 }
