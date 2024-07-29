@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  PushupCountViewController.swift
 //  APPushupTracker
 //
 //  Created by Emily Corso on 5/15/24.
@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-struct ContentView: View {
+struct PushupCountViewController: View {
     @Environment(PushupsDetector.self) private var pushupsDetector
     
     @State private var pushupCount = 8 {
@@ -80,6 +80,6 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    PushupCountViewController()
         .environment(PushupsDetector())
 }

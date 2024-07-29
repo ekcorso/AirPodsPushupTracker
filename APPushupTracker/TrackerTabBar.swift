@@ -15,7 +15,7 @@ struct TrackerTabBar: View {
     
     var body: some View {
         TabView {
-            ContentView()
+            PushupCountViewController()
                 .tabItem {
                     Label("Track Pushups", systemImage: "play.circle")
                 }

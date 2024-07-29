@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		FC33C8182C39EB2A00CD0008 /* NumberFormatter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC33C8172C39EB2A00CD0008 /* NumberFormatter+Extensions.swift */; };
 		FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */; };
-		FC35A0412BF570E600680D70 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A0402BF570E600680D70 /* ContentView.swift */; };
+		FC35A0412BF570E600680D70 /* PushupCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A0402BF570E600680D70 /* PushupCountViewController.swift */; };
 		FC35A0432BF570EA00680D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0422BF570EA00680D70 /* Assets.xcassets */; };
 		FC35A0462BF570EB00680D70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */; };
 		FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */; };
@@ -37,7 +37,7 @@
 		FC33C8172C39EB2A00CD0008 /* NumberFormatter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NumberFormatter+Extensions.swift"; sourceTree = "<group>"; };
 		FC35A03B2BF570E600680D70 /* APPushupTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APPushupTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APPushupTrackerApp.swift; sourceTree = "<group>"; };
-		FC35A0402BF570E600680D70 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FC35A0402BF570E600680D70 /* PushupCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupCountViewController.swift; sourceTree = "<group>"; };
 		FC35A0422BF570EA00680D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC770BF72C07C092002B0EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			children = (
 				FC770BF72C07C092002B0EE5 /* Info.plist */,
 				FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */,
-				FC35A0402BF570E600680D70 /* ContentView.swift */,
+				FC35A0402BF570E600680D70 /* PushupCountViewController.swift */,
 				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
 				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
@@ -234,7 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC35A0412BF570E600680D70 /* ContentView.swift in Sources */,
+				FC35A0412BF570E600680D70 /* PushupCountViewController.swift in Sources */,
 				FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */,
 				FCDFA4102C55BD8C00C5A425 /* ExerciseSelectionViewController.swift in Sources */,
 				FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */,
