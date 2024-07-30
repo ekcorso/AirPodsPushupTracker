@@ -9,23 +9,31 @@ import SwiftUI
 
 struct ExerciseSelectionViewController: View {
     @State private var maxWidth: CGFloat = .zero
+    @State private var isShowingPushupCountView = false
 
     var body: some View {
-        VStack {
-            Text("Select an exercise")
-                .padding(30)
-                .font(.title)
-            
-            VStack(spacing: 15) {
-                ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Pushups", maxWidth: $maxWidth) {
+        NavigationStack {
+            VStack {
+                Text("Select an exercise")
+                    .padding(30)
+                    .font(.title)
+                
+                VStack(spacing: 15) {
+                    // TODO: Transisiton to new NavLink initializer when removing support for iOS 15
+                    NavigationLink(destination: PushupCountViewController(), isActive: $isShowingPushupCountView) { EmptyView() }
                     
-                }
-                ResizingButton(backgroundColor: .green, foregroundColor: .white, title: "Squats", maxWidth: $maxWidth) {
+                    ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Pushups", maxWidth: $maxWidth) {
+                        self.isShowingPushupCountView = true
+                    }
                     
+                    ResizingButton(backgroundColor: .green, foregroundColor: .white, title: "Squats", maxWidth: $maxWidth) {
+                        
+                    }
+                    ResizingButton(backgroundColor: .orange, foregroundColor: .white, title: "Situps", maxWidth: $maxWidth) {
+                        
+                    }
                 }
-                ResizingButton(backgroundColor: .orange, foregroundColor: .white, title: "Situps", maxWidth: $maxWidth) {
-                    
-                }
+                .navigationTitle("Exercise Options")
             }
         }
     }
@@ -33,4 +41,5 @@ struct ExerciseSelectionViewController: View {
 
 #Preview {
     ExerciseSelectionViewController()
+        .environment(PushupsDetector())
 }
