@@ -21,6 +21,7 @@
 		FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9414942BF8237100692A1F /* ResizingButton.swift */; };
 		FCD9B4DD2C27A09000D616A4 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */; };
 		FCDFA4102C55BD8C00C5A425 /* ExerciseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */; };
+		FCDFA4142C59C25D00C5A425 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA4132C59C25D00C5A425 /* Detector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FCD9B4D32C27A07F00D616A4 /* APPushupTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APPushupTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
 		FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectionViewController.swift; sourceTree = "<group>"; };
+		FCDFA4132C59C25D00C5A425 /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 				FC91DF3B2C3B611B00FBB2B7 /* DataStore.swift */,
 				FC7B91212BFAEDF600B5D714 /* MotionManager.swift */,
 				FC7B91232BFAF7CC00B5D714 /* PushupsDetector.swift */,
+				FCDFA4132C59C25D00C5A425 /* Detector.swift */,
 				FC33C8172C39EB2A00CD0008 /* NumberFormatter+Extensions.swift */,
 			);
 			path = Utilities;
@@ -245,6 +248,7 @@
 				FC33C8182C39EB2A00CD0008 /* NumberFormatter+Extensions.swift in Sources */,
 				FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */,
 				FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */,
+				FCDFA4142C59C25D00C5A425 /* Detector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
