@@ -8,14 +8,10 @@
 import SwiftUI
 
 @Observable
-class PushupsDetector {
+class PushupsDetector: Detector {
+    var dataStore = DataStore.shared
     var isActive = false
-    
     var count = 0
-    
-    var accelerationData: [Double]
-    var pitchData: [Double]
-    let dataStore = DataStore.shared
     
     var isValidPosition = false
     
@@ -27,6 +23,9 @@ class PushupsDetector {
     private let upThreshold: Double = 0.3
     
     private let proneThreshold: Double = -0.8
+    
+    private var accelerationData: [Double]
+    private var pitchData: [Double]
     
     init() {
         self.accelerationData = [Double]()
@@ -41,7 +40,7 @@ class PushupsDetector {
     }
     
     // Must call this before utilizing this class
-    func initializePitchAndAccelerationData() {
+    func initializeData() {
         accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
         pitchData = dataStore.retrievePitchData() ?? [Double]()
     }
@@ -59,7 +58,7 @@ class PushupsDetector {
         print("Session ended.")
     }
     
-    func savePitchAndAccelerationData() async {
+    func saveData() async {
         await dataStore.savePitchData(pitchData)
         await dataStore.saveAccelerationData(accelerationData)
     }

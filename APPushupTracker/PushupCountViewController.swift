@@ -62,7 +62,7 @@ struct PushupCountViewController: View {
     }
     
     private func startCounting() {
-        self.pushupsDetector.initializePitchAndAccelerationData()
+        self.pushupsDetector.initializeData()
         
         if !pushupsDetector.isActive {
             pushupsDetector.startSession()
@@ -74,7 +74,7 @@ struct PushupCountViewController: View {
             pushupsDetector.endSession()
         }
         Task {
-            await pushupsDetector.savePitchAndAccelerationData()
+            await pushupsDetector.saveData()
         }
     }
 }
