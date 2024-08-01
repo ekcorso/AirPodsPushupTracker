@@ -9,70 +9,25 @@ import SwiftUI
 
 @Observable
 class PushupsDetector: Detector {
-    var dataStore = DataStore.shared
-    var isActive = false
-    var count = 0
-    
-    var isValidPosition = false
-    
-    private let motionManager: MotionManager
-
-    private var isPushupPhase = false
-    
-    private let downThreshold: Double = -0.7
-    private let upThreshold: Double = 0.3
-    
-    private let proneThreshold: Double = -0.8
-    
-    private var accelerationData: [Double]
-    private var pitchData: [Double]
-    
-    init() {
-        self.accelerationData = [Double]()
-        self.pitchData = [Double]()
+    override init() {
+        super.init()
         
-        self.motionManager = MotionManager()
+        downThreshold = -0.7
+        upThreshold = 0.3
+        proneThreshold = -0.8
+        
         motionManager.delegate = self
     }
     
-    deinit {
-        endSession()
-    }
-    
     // Must call this before utilizing this class
-    func initializeData() {
+    override func initializeData() {
         accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
         pitchData = dataStore.retrievePitchData() ?? [Double]()
     }
     
-    func startSession() {
-        print("Starting session...")
-        motionManager.startUpdates()
-        isActive = true
-    }
-    
-    func endSession() {
-        motionManager.stopUpdates()
-        isActive = false
-        
-        print("Session ended.")
-    }
-    
-    func saveData() async {
+    override func saveData() async {
         await dataStore.savePitchData(pitchData)
         await dataStore.saveAccelerationData(accelerationData)
-    }
-    
-    func isDeviceMotionAvailable() -> Bool {
-        return motionManager.isDeviceMotionAvailable()
-    }
-    
-    func incrementCount() {
-        count += 1
-    }
-    
-    func resetCount() {
-        count = 0
     }
 }
 
@@ -80,12 +35,12 @@ extension PushupsDetector: MotionManagerDelegate {
     func didUpdateAccelerationY(_ accelerationY: Double) {
         accelerationData.append(accelerationY)
         
-        if accelerationY < downThreshold && !isPushupPhase {
+        if accelerationY < downThreshold && !isUpwardPhase {
             // User is movintg downward in a pushup
-            isPushupPhase = true
-        } else if accelerationY > upThreshold && isPushupPhase {
+            isUpwardPhase = true
+        } else if accelerationY > upThreshold && isUpwardPhase {
             incrementCount()
-            isPushupPhase = false
+            isUpwardPhase = false
         }
     }
     
