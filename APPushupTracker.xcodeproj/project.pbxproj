@@ -104,13 +104,8 @@
 			children = (
 				FC770BF72C07C092002B0EE5 /* Info.plist */,
 				FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */,
-				FC35A0402BF570E600680D70 /* PushupCountViewController.swift */,
-				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
+				FCE67EF02C5D32FF00C69875 /* Views */,
 				FCE67EEF2C5D329C00C69875 /* Models */,
-				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
-				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
-				FC9414942BF8237100692A1F /* ResizingButton.swift */,
-				FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */,
 				FC91DF3D2C41880E00FBB2B7 /* Utilities */,
 				FC35A0422BF570EA00680D70 /* Assets.xcassets */,
 				FC35A0442BF570EB00680D70 /* Preview Content */,
@@ -155,6 +150,19 @@
 				FCE67EED2C5D300400C69875 /* Squat.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		FCE67EF02C5D32FF00C69875 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FC35A0402BF570E600680D70 /* PushupCountViewController.swift */,
+				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
+				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
+				FC9414942BF8237100692A1F /* ResizingButton.swift */,
+				FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */,
+				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

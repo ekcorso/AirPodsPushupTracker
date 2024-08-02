@@ -27,10 +27,10 @@ struct ExerciseSelectionViewController: View {
                     }
                     
                     ResizingButton(backgroundColor: .green, foregroundColor: .white, title: "Squats", maxWidth: $maxWidth) {
-                        
+                        // Button action not set
                     }
                     ResizingButton(backgroundColor: .orange, foregroundColor: .white, title: "Situps", maxWidth: $maxWidth) {
-                        
+                        // Button action not set
                     }
                 }
                 .navigationTitle("Exercise Options")
