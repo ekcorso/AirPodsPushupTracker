@@ -106,9 +106,7 @@
 				FC35A03E2BF570E600680D70 /* APPushupTrackerApp.swift */,
 				FC35A0402BF570E600680D70 /* PushupCountViewController.swift */,
 				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
-				FCE67EE92C5C9CB500C69875 /* Exercise.swift */,
-				FCE67EEB2C5CA0B400C69875 /* Pushup.swift */,
-				FCE67EED2C5D300400C69875 /* Squat.swift */,
+				FCE67EEF2C5D329C00C69875 /* Models */,
 				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
@@ -147,6 +145,16 @@
 				FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */,
 			);
 			path = APPushupTrackerTests;
+			sourceTree = "<group>";
+		};
+		FCE67EEF2C5D329C00C69875 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FCE67EE92C5C9CB500C69875 /* Exercise.swift */,
+				FCE67EEB2C5CA0B400C69875 /* Pushup.swift */,
+				FCE67EED2C5D300400C69875 /* Squat.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
