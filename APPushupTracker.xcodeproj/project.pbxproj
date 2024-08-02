@@ -24,6 +24,8 @@
 		FCDFA4142C59C25D00C5A425 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA4132C59C25D00C5A425 /* Detector.swift */; };
 		FCDFA4162C5AA16500C5A425 /* SquatsDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA4152C5AA16500C5A425 /* SquatsDetector.swift */; };
 		FCE67EEA2C5C9CB500C69875 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE67EE92C5C9CB500C69875 /* Exercise.swift */; };
+		FCE67EEC2C5CA0B400C69875 /* Pushup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE67EEB2C5CA0B400C69875 /* Pushup.swift */; };
+		FCE67EEE2C5D300400C69875 /* Squat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE67EED2C5D300400C69875 /* Squat.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		FCDFA4132C59C25D00C5A425 /* Detector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detector.swift; sourceTree = "<group>"; };
 		FCDFA4152C5AA16500C5A425 /* SquatsDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatsDetector.swift; sourceTree = "<group>"; };
 		FCE67EE92C5C9CB500C69875 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		FCE67EEB2C5CA0B400C69875 /* Pushup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pushup.swift; sourceTree = "<group>"; };
+		FCE67EED2C5D300400C69875 /* Squat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Squat.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				FC35A0402BF570E600680D70 /* PushupCountViewController.swift */,
 				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
 				FCE67EE92C5C9CB500C69875 /* Exercise.swift */,
+				FCE67EEB2C5CA0B400C69875 /* Pushup.swift */,
+				FCE67EED2C5D300400C69875 /* Squat.swift */,
 				FC7B91272BFBEA2600B5D714 /* PushupChartView.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
@@ -247,9 +253,11 @@
 				FC35A03F2BF570E600680D70 /* APPushupTrackerApp.swift in Sources */,
 				FCDFA4102C55BD8C00C5A425 /* ExerciseSelectionViewController.swift in Sources */,
 				FC7B91242BFAF7CC00B5D714 /* PushupsDetector.swift in Sources */,
+				FCE67EEE2C5D300400C69875 /* Squat.swift in Sources */,
 				FC91DF3C2C3B611B00FBB2B7 /* DataStore.swift in Sources */,
 				FCE67EEA2C5C9CB500C69875 /* Exercise.swift in Sources */,
 				FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */,
+				FCE67EEC2C5CA0B400C69875 /* Pushup.swift in Sources */,
 				FCDFA4162C5AA16500C5A425 /* SquatsDetector.swift in Sources */,
 				FC7B91282BFBEA2600B5D714 /* PushupChartView.swift in Sources */,
 				FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */,
