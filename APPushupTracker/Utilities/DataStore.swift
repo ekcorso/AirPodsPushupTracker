@@ -7,6 +7,14 @@
 
 import Foundation
 
+struct Key {
+    static let pushupAccelerationDataKey = "pushupAccelerationKey"
+    static let pushupPitchDataKey = "pushupPitchData"
+    
+    static let squatAccelerationKey = "squatAccelerationKey"
+    static let squatPitchKey = "squatPitchKey"
+}
+
 actor DataStore {
     static let shared = DataStore()
     
