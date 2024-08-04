@@ -33,8 +33,8 @@ class PushupChartViewViewModel {
     }
     
     func updateAllProperties() {
-        self.accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
-        self.pitchData = dataStore.retrieveAccelerationData() ?? [Double]()
+        self.accelerationData = dataStore.retrievePushupAccelerationData() ?? [Double]()
+        self.pitchData = dataStore.retrievePushupAccelerationData() ?? [Double]()
         
         self.avgPitch = getAveragePitch(pitchData)
         self.avgUpAcceleration = getAvgUpAcceleration(accelerationData)

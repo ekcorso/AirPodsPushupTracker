@@ -23,13 +23,13 @@ class SquatsDetector: Detector {
     
     // Must call this before utilizing this class
     override func initializeData() {
-        accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
-        pitchData = dataStore.retrievePitchData() ?? [Double]()
+        accelerationData = dataStore.retrieveSquatAccelerationData() ?? [Double]()
+        pitchData = dataStore.retrieveSquatPitchData() ?? [Double]()
     }
     
     override func saveData() async {
-        await dataStore.savePitchData(pitchData)
-        await dataStore.saveAccelerationData(accelerationData)
+        await dataStore.saveSquatPitchData(pitchData)
+        await dataStore.saveSquatAccelerationData(accelerationData)
     }
 }
 

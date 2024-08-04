@@ -40,8 +40,8 @@ class Detector {
     
     // Must call this before utilizing this class
     func initializeData() {
-        accelerationData = dataStore.retrieveAccelerationData() ?? [Double]()
-        pitchData = dataStore.retrievePitchData() ?? [Double]()
+        accelerationData = dataStore.retrievePushupAccelerationData() ?? [Double]()
+        pitchData = dataStore.retrievePushupPitchData() ?? [Double]()
     }
     
     func startSession() {
@@ -58,8 +58,8 @@ class Detector {
     }
     
     func saveData() async {
-        await dataStore.savePitchData(pitchData)
-        await dataStore.saveAccelerationData(accelerationData)
+        await dataStore.savePushupPitchData(pitchData)
+        await dataStore.savePushupAccelerationData(accelerationData)
     }
     
     func isDeviceMotionAvailable() -> Bool {
