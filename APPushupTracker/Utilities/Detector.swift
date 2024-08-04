@@ -46,8 +46,45 @@ class Detector {
     
     // Must call this before utilizing this class
     func initializeData() {
+        switch exerciseType {
+        case is Pushup:
+            initializePushupData()
+        case is Squat:
+            initializeSquatData()
+        default:
+            fatalError("Could not initialize movement data. Exercise type is not recognized.")
+        }
+    }
+    
+    func initializePushupData() {
         accelerationData = dataStore.retrievePushupAccelerationData() ?? [Double]()
         pitchData = dataStore.retrievePushupPitchData() ?? [Double]()
+    }
+    
+    func initializeSquatData() {
+        accelerationData = dataStore.retrieveSquatAccelerationData() ?? [Double]()
+        pitchData = dataStore.retrieveSquatPitchData() ?? [Double]()
+    }
+    
+    func saveData() async {
+        switch exerciseType {
+        case is Pushup:
+            await savePushupData()
+        case is Squat:
+            await saveSquatData()
+        default:
+            fatalError("Could not save. Exercise type is not recognized.")
+        }
+    }
+    
+    func savePushupData() async {
+        await dataStore.savePushupPitchData(pitchData)
+        await dataStore.savePushupAccelerationData(accelerationData)
+    }
+    
+    func saveSquatData() async {
+        await dataStore.saveSquatPitchData(pitchData)
+        await dataStore.saveSquatAccelerationData(accelerationData)
     }
     
     func startSession() {
@@ -61,11 +98,6 @@ class Detector {
         isActive = false
         
         print("Session ended.")
-    }
-    
-    func saveData() async {
-        await dataStore.savePushupPitchData(pitchData)
-        await dataStore.savePushupAccelerationData(accelerationData)
     }
     
     func isDeviceMotionAvailable() -> Bool {
