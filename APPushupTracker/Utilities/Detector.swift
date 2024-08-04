@@ -21,14 +21,20 @@ class Detector {
     
     var isUpwardPhase = false
 
+    var exerciseType: Exercise // This type is not quite correct
+    
     var accelerationData: [Double]
     var pitchData: [Double]
     
-    init() {
+    init(for exercise: Exercise) {
+        self.exerciseType = exercise
+        
         self.accelerationData = [Double]()
         self.pitchData = [Double]()
         
         self.motionManager = MotionManager()
+        
+        
         self.downThreshold = 0
         self.upThreshold = 0
         self.proneThreshold = 0
