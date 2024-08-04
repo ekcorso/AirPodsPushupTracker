@@ -19,39 +19,54 @@ actor DataStore {
     static let shared = DataStore()
     
     private let defaults = UserDefaults.standard
-    private var accelerationData: [Double]
-    private var pitchData: [Double]
     
-    struct Key {
-        static let accelerationDataKey = "accelerationData"
-        static let pitchDataKey = "pitchData"
-    }
+    private var pushupAccelerationData: [Double]
+    private var pushupPitchData: [Double]
+    
+    private var squatAccelerationData: [Double]
+    private var squatPitchData: [Double]
     
     private init() {
-        self.accelerationData = (UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]) ?? [Double]()
-        self.pitchData = (UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]) ?? [Double]()
-    }
-    
-    func savePitchData(_ data: [Double]) {
-        defaults.setValue(data, forKey: Key.pitchDataKey)
-        pitchData.append(contentsOf: data)
+        self.pushupAccelerationData = (UserDefaults.standard.array(forKey: Key.pushupAccelerationDataKey) as? [Double]) ?? [Double]()
+        self.pushupPitchData = (UserDefaults.standard.array(forKey: Key.pushupAccelerationDataKey) as? [Double]) ?? [Double]()
         
-//        avgPitch = getAveragePitch(pitchData)
+        self.squatAccelerationData = (UserDefaults.standard.array(forKey: Key.squatAccelerationKey) as? [Double]) ?? [Double]()
+        self.squatPitchData = (UserDefaults.standard.array(forKey: Key.squatPitchKey) as? [Double]) ?? [Double]()
     }
     
-    func saveAccelerationData(_ data: [Double]) {
-        defaults.setValue(data, forKey: Key.accelerationDataKey)
-        accelerationData.append(contentsOf: data)
-        
-//        avgUpAcceleration = getAvgUpAcceleration(accelerationData)
-//        avgDownAcceleration = getAvgDownAcceleration(accelerationData)
+    func savePushupPitchData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.pushupPitchDataKey)
+        pushupPitchData.append(contentsOf: data)
     }
     
-    nonisolated func retrievePitchData() -> [Double]? {
-        return UserDefaults.standard.array(forKey: Key.pitchDataKey) as? [Double]
+    func savePushupAccelerationData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.pushupAccelerationDataKey)
+        pushupAccelerationData.append(contentsOf: data)
     }
     
-    nonisolated func retrieveAccelerationData() -> [Double]? {
-        return UserDefaults.standard.array(forKey: Key.accelerationDataKey) as? [Double]
+    func saveSquatPitchData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.squatPitchKey)
+        pushupPitchData.append(contentsOf: data)
+    }
+    
+    func saveSquatAccelerationData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.squatAccelerationKey)
+        pushupAccelerationData.append(contentsOf: data)
+    }
+    
+    nonisolated func retrievePushupPitchData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.pushupPitchDataKey) as? [Double]
+    }
+    
+    nonisolated func retrievePushupAccelerationData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.pushupAccelerationDataKey) as? [Double]
+    }
+    
+    nonisolated func retrieveSquatPitchData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.squatPitchKey) as? [Double]
+    }
+    
+    nonisolated func retrieveSquatAccelerationData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.squatAccelerationKey) as? [Double]
     }
 }
