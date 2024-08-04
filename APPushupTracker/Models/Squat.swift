@@ -17,8 +17,5 @@ class Squat: Exercise {
         self.downAccelerationThreshold = -0.7
         self.upAccelerationThreshold = 0.3
         self.pitchThreshold = -0.8
-        
-        self.accelerationKey = "squatAccelerationKey"
-        self.pitchKey = "squatPitchKey"
     }
 }
