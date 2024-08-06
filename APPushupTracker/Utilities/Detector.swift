@@ -23,7 +23,7 @@ class Detector {
     
     var isUpwardPhase = false
 
-    var exerciseType: Exercise // This type is not quite correct
+    var exerciseType: Exercise
     
     var accelerationData: [Double]
     var pitchData: [Double]

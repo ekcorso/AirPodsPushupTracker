@@ -10,11 +10,11 @@ import Foundation
 class Pushup: Exercise {
     static let shared = Pushup()
     
-    private override init() {
-        super.init()
+    var downAccelerationThreshold = -0.7
+    var upAccelerationThreshold = 0.3
+    var pitchThreshold = -0.8
+    
+    private init() {
         
-        self.downAccelerationThreshold = -0.7
-        self.upAccelerationThreshold = 0.3
-        self.pitchThreshold = -0.8
     }
 }

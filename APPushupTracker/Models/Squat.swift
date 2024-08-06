@@ -10,12 +10,12 @@ import Foundation
 class Squat: Exercise {
     static let shared = Squat()
     
-    private override init() {
-        super.init()
+    // TODO: Need to rethink these thresholds for Squats. Currently still detecting pushups
+    var downAccelerationThreshold = -0.7
+    var upAccelerationThreshold = 0.3
+    var pitchThreshold = -0.8
+    
+    private init() {
         
-        // TODO: Need to rethink these thresholds for Squats. Currently still detecting pushups
-        self.downAccelerationThreshold = -0.7
-        self.upAccelerationThreshold = 0.3
-        self.pitchThreshold = -0.8
     }
 }
