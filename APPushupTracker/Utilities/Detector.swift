@@ -34,6 +34,7 @@ class Detector {
         
         self.motionManager = MotionManager()
         
+        motionManager.delegate = self
         
         self.downThreshold = 0
         self.upThreshold = 0
@@ -110,5 +111,25 @@ class Detector {
     
     func resetCount() {
         count = 0
+    }
+}
+
+extension Detector: MotionManagerDelegate {
+    func didUpdateAccelerationY(_ accelerationY: Double) {
+        accelerationData.append(accelerationY)
+
+        if accelerationY < downThreshold && !isUpwardPhase {
+            // User is movintg downward in a pushup
+            isUpwardPhase = true
+        } else if accelerationY > upThreshold && isUpwardPhase {
+            incrementCount()
+            isUpwardPhase = false
+        }
+    }
+
+    func didUpdatePitch(_ pitch: Double) {
+        pitchData.append(pitch)
+
+        isValidPosition = pitch < proneThreshold
     }
 }
