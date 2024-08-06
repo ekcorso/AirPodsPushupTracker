@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
+@Observable
 class Detector {
     var isActive: Bool = false
     var isValidPosition: Bool = false
