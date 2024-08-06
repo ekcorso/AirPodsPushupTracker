@@ -10,7 +10,7 @@ import Observation
 
 @main
 struct APPushupTrackerApp: App {
-    @State private var pushupsDetector = PushupsDetector()
+    @State private var pushupsDetector = Detector(for: Pushup.shared)
     @State private var pushupsChartViewModel = PushupChartViewViewModel()
     
     var body: some Scene {

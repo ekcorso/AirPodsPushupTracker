@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct PushupCountViewController: View {
-    @Environment(PushupsDetector.self) private var pushupsDetector
+    @Environment(Detector.self) private var pushupsDetector
     
     @State private var pushupCount = 8 {
         didSet {
@@ -81,5 +81,5 @@ struct PushupCountViewController: View {
 
 #Preview {
     PushupCountViewController()
-        .environment(PushupsDetector())
+        .environment(Detector(for: Pushup.shared))
 }
