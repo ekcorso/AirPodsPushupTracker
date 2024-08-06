@@ -19,6 +19,8 @@ struct PushupCountViewController: View {
     
     @State private var maxWidth: CGFloat = .zero
     
+    private let exercise: Exercise
+    
     private let startText = "Press start to begin"
     
     private var instructionText: String {
@@ -36,10 +38,14 @@ struct PushupCountViewController: View {
         if pushupsDetector.isValidPosition {
             text = "You're ready 😎"
         } else {
-            text = "Get in position!"
+            text = "Get in position for \(exercise)!"
         }
         
         return text
+    }
+    
+    init(with exercise: Exercise) {
+        self.exercise = exercise
     }
     
     var body: some View {
@@ -80,6 +86,6 @@ struct PushupCountViewController: View {
 }
 
 #Preview {
-    PushupCountViewController()
+    PushupCountViewController(with: Pushup.shared)
         .environment(Detector(for: Pushup.shared))
 }
