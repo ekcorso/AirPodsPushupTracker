@@ -21,9 +21,9 @@ struct ExerciseSelectionViewController: View {
                 
                 VStack(spacing: 15) {
                     // TODO: Transisiton to new NavLink initializer when removing support for iOS 15
-                    NavigationLink(destination: PushupCountViewController(with: Pushup.shared), isActive: $isShowingPushupCountView) { EmptyView() }
+                    NavigationLink(destination: CountViewController(with: Pushup.shared), isActive: $isShowingPushupCountView) { EmptyView() }
                     
-                    NavigationLink(destination: PushupCountViewController(with: Squat.shared), isActive: $isShowingSquatCountView) { EmptyView() }
+                    NavigationLink(destination: CountViewController(with: Squat.shared), isActive: $isShowingSquatCountView) { EmptyView() }
                     
                     ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Pushups", maxWidth: $maxWidth) {
                         self.isShowingPushupCountView = true

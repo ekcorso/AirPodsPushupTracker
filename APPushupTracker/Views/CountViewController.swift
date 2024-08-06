@@ -8,7 +8,7 @@
 import SwiftUI
 import AVFoundation
 
-struct PushupCountViewController: View {
+struct CountViewController: View {
     @Environment(Detector.self) private var pushupsDetector
     
     @State private var pushupCount = 8 {
@@ -86,6 +86,6 @@ struct PushupCountViewController: View {
 }
 
 #Preview {
-    PushupCountViewController(with: Pushup.shared)
+    CountViewController(with: Pushup.shared)
         .environment(Detector(for: Pushup.shared))
 }
