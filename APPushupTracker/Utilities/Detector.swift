@@ -17,9 +17,9 @@ class Detector {
     
     let motionManager: MotionManager
 
-    var downThreshold: Double
-    var upThreshold: Double
-    var proneThreshold: Double
+    var downThreshold: Double = 0
+    var upThreshold: Double = 0
+    var proneThreshold: Double = 0
     
     var isUpwardPhase = false
 
@@ -38,9 +38,23 @@ class Detector {
         
         motionManager.delegate = self
         
-        self.downThreshold = 0
-        self.upThreshold = 0
-        self.proneThreshold = 0
+        // Initialize thresholds for detecting exercise of current type
+        switch exerciseType {
+        case is Pushup:
+            let pushup = Pushup.shared
+            self.downThreshold = pushup.downAccelerationThreshold
+            self.upThreshold = pushup.upAccelerationThreshold
+            self.proneThreshold = pushup.pitchThreshold
+        case is Squat:
+            let squat = Squat.shared
+            self.downThreshold = squat.downAccelerationThreshold
+            self.upThreshold = squat.upAccelerationThreshold
+            self.proneThreshold = squat.pitchThreshold
+        default:
+            self.downThreshold = 0
+            self.upThreshold = 0
+            self.proneThreshold = 0
+        }
     }
     
     deinit {
