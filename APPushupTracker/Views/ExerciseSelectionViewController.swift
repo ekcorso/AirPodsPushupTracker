@@ -11,6 +11,9 @@ struct ExerciseSelectionViewController: View {
     @State private var maxWidth: CGFloat = .zero
     @State private var isShowingPushupCountView = false
     @State private var isShowingSquatCountView = false
+   
+    let pushup = Pushup.shared
+    let squat = Squat.shared
     
     var body: some View {
         NavigationStack {
@@ -21,15 +24,15 @@ struct ExerciseSelectionViewController: View {
                 
                 VStack(spacing: 15) {
                     // TODO: Transisiton to new NavLink initializer when removing support for iOS 15
-                    NavigationLink(destination: CountViewController(with: Pushup.shared), isActive: $isShowingPushupCountView) { EmptyView() }
+                    NavigationLink(destination: CountViewController(with: pushup), isActive: $isShowingPushupCountView) { EmptyView() }
                     
-                    NavigationLink(destination: CountViewController(with: Squat.shared), isActive: $isShowingSquatCountView) { EmptyView() }
+                    NavigationLink(destination: CountViewController(with: squat), isActive: $isShowingSquatCountView) { EmptyView() }
                     
-                    ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: "Pushups", maxWidth: $maxWidth) {
+                    ResizingButton(backgroundColor: .blue, foregroundColor: .white, title: pushup.name, maxWidth: $maxWidth) {
                         self.isShowingPushupCountView = true
                     }
                     
-                    ResizingButton(backgroundColor: .green, foregroundColor: .white, title: "Squats", maxWidth: $maxWidth) {
+                    ResizingButton(backgroundColor: .green, foregroundColor: .white, title: squat.name, maxWidth: $maxWidth) {
                         self.isShowingSquatCountView = true
                     }
                     

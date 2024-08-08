@@ -14,6 +14,8 @@ class Pushup: Exercise {
     var upAccelerationThreshold = 0.3
     var pitchThreshold = -0.8
     
+    var name = "Pushups"
+    
     private init() {
         
     }

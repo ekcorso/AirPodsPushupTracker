@@ -15,6 +15,8 @@ class Squat: Exercise {
     var upAccelerationThreshold = 0.3
     var pitchThreshold = -0.8
     
+    var name = "Squats"
+    
     private init() {
         
     }
