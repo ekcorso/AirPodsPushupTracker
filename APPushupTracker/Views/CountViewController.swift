@@ -9,8 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct CountViewController: View {
-    @Environment(Detector.self) private var pushupDetector
-    @Environment(Detector.self) private var squatDetector
+    @State private var detector: Detector
     
     @State private var pushupCount = 8 {
         didSet {
@@ -27,16 +26,16 @@ struct CountViewController: View {
     private var instructionText: String {
         var text = startText
         
-        guard pushupDetector.isActive else {
+        guard detector.isActive else {
             return text
         }
         
-        guard pushupDetector.isDeviceMotionAvailable() else {
+        guard detector.isDeviceMotionAvailable() else {
             text = "AirPods not connected"
             return text
         }
         
-        if pushupDetector.isValidPosition {
+        if detector.isValidPosition {
             text = "You're ready 😎"
         } else {
             text = "Get in position for \(exercise)!"
@@ -47,6 +46,7 @@ struct CountViewController: View {
     
     init(with exercise: Exercise) {
         self.exercise = exercise
+        self.detector = Detector(for: exercise)
     }
     
     var body: some View {
@@ -54,7 +54,7 @@ struct CountViewController: View {
             Group {
                 Text(instructionText)
             }
-            Text("\(pushupDetector.count)")
+            Text("\(detector.count)")
                 .font(.system(size: 120))
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
@@ -65,29 +65,26 @@ struct CountViewController: View {
                 ResizingButton(backgroundColor: .gray, foregroundColor: .black, title: "Stop", maxWidth: $maxWidth, action: stopCounting)         // Let's deactivate this button if the session has not started yet
             }
         }
-        .environment(pushupDetector)
-        .environment(squatDetector)
     }
     
     private func startCounting() {
-        self.pushupDetector.initializeData()
+        self.detector.initializeData()
         
-        if !pushupDetector.isActive {
-            pushupDetector.startSession()
+        if !detector.isActive {
+            detector.startSession()
         }
     }
     
     private func stopCounting() {
-        if pushupDetector.isActive {
-            pushupDetector.endSession()
+        if detector.isActive {
+            detector.endSession()
         }
         Task {
-            await pushupDetector.saveData()
+            await detector.saveData()
         }
     }
 }
 
 #Preview {
     CountViewController(with: Pushup.shared)
-        .environment(Detector(for: Pushup.shared))
 }

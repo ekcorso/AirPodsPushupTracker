@@ -48,6 +48,4 @@ struct ExerciseSelectionViewController: View {
 
 #Preview {
     ExerciseSelectionViewController()
-        .environment(Detector(for: Pushup.shared))
-        .environment(Detector(for: Squat.shared))
 }
