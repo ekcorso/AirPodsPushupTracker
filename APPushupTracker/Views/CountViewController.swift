@@ -10,6 +10,7 @@ import AVFoundation
 
 struct CountViewController: View {
     @Environment(Detector.self) private var pushupDetector
+    @Environment(Detector.self) private var squatDetector
     
     @State private var pushupCount = 8 {
         didSet {
