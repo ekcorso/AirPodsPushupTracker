@@ -9,7 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct CountViewController: View {
-    @Environment(Detector.self) private var pushupsDetector
+    @Environment(Detector.self) private var pushupDetector
     
     @State private var pushupCount = 8 {
         didSet {
@@ -26,16 +26,16 @@ struct CountViewController: View {
     private var instructionText: String {
         var text = startText
         
-        guard pushupsDetector.isActive else {
+        guard pushupDetector.isActive else {
             return text
         }
         
-        guard pushupsDetector.isDeviceMotionAvailable() else {
+        guard pushupDetector.isDeviceMotionAvailable() else {
             text = "AirPods not connected"
             return text
         }
         
-        if pushupsDetector.isValidPosition {
+        if pushupDetector.isValidPosition {
             text = "You're ready 😎"
         } else {
             text = "Get in position for \(exercise)!"
@@ -53,7 +53,7 @@ struct CountViewController: View {
             Group {
                 Text(instructionText)
             }
-            Text("\(pushupsDetector.count)")
+            Text("\(pushupDetector.count)")
                 .font(.system(size: 120))
                 .lineLimit(1)
                 .minimumScaleFactor(0.5)
@@ -64,23 +64,24 @@ struct CountViewController: View {
                 ResizingButton(backgroundColor: .gray, foregroundColor: .black, title: "Stop", maxWidth: $maxWidth, action: stopCounting)         // Let's deactivate this button if the session has not started yet
             }
         }
-        .environment(pushupsDetector)
+        .environment(pushupDetector)
+        .environment(squatDetector)
     }
     
     private func startCounting() {
-        self.pushupsDetector.initializeData()
+        self.pushupDetector.initializeData()
         
-        if !pushupsDetector.isActive {
-            pushupsDetector.startSession()
+        if !pushupDetector.isActive {
+            pushupDetector.startSession()
         }
     }
     
     private func stopCounting() {
-        if pushupsDetector.isActive {
-            pushupsDetector.endSession()
+        if pushupDetector.isActive {
+            pushupDetector.endSession()
         }
         Task {
-            await pushupsDetector.saveData()
+            await pushupDetector.saveData()
         }
     }
 }

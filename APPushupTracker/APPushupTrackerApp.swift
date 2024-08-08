@@ -10,13 +10,13 @@ import Observation
 
 @main
 struct APPushupTrackerApp: App {
-    @State private var pushupsDetector = Detector(for: Pushup.shared)
+    @State private var pushupDetector = Detector(for: Pushup.shared) // Need to generalize this or duplicate it for the other exercises
     @State private var pushupsChartViewModel = PushupChartViewViewModel()
     
     var body: some Scene {
         WindowGroup {
             TrackerTabBar()
-                .environment(pushupsDetector)
+                .environment(pushupDetector)
                 .environment(pushupsChartViewModel)
         }
     }
