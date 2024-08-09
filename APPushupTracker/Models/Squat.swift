@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Squat: Exercise {
     static let shared = Squat()
@@ -16,6 +17,8 @@ class Squat: Exercise {
     var pitchThreshold = -0.8
     
     var name = "Squats"
+    
+    var signatureColor: Color = .green
     
     private init() {
         

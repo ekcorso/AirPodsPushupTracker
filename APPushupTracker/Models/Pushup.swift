@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Pushup: Exercise {
     static let shared = Pushup()
@@ -15,6 +16,8 @@ class Pushup: Exercise {
     var pitchThreshold = -0.8
     
     var name = "Pushups"
+    
+    var signatureColor: Color = .blue
     
     private init() {
         
