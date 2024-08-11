@@ -1,5 +1,5 @@
 //
-//  PushupChartView.swift
+//  ExerciseChartView.swift
 //  APPushupTracker
 //
 //  Created by Emily Corso on 5/20/24.
@@ -8,7 +8,8 @@
 import SwiftUI
 import Charts
 
-struct PushupChartView: View {
+// Rename to ChartView? Need to inject model type...
+struct ExerciseChartView: View {
     @State private var viewModel = PushupChartViewViewModel()
     
     var body: some View {
@@ -41,5 +42,5 @@ struct PushupChartView: View {
 }
 
 #Preview {
-    PushupChartView()
+    ExerciseChartView()
 }

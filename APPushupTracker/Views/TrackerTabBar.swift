@@ -19,7 +19,7 @@ struct TrackerTabBar: View {
                 .tabItem {
                     Label("Select Exercise", systemImage: "figure.run")
                 }
-            PushupChartView()
+            ExerciseChartView()
                 .tabItem {
                     Label("Data", systemImage: "chart.xyaxis.line")
                 }
