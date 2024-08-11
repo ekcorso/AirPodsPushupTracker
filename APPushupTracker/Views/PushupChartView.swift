@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct PushupChartView: View {
-    @Environment(PushupChartViewViewModel.self) private var viewModel
+    @State private var viewModel = PushupChartViewViewModel()
     
     var body: some View {
         VStack {
@@ -42,5 +42,4 @@ struct PushupChartView: View {
 
 #Preview {
     PushupChartView()
-        .environment(PushupChartViewViewModel())
 }

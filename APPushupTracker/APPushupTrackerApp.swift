@@ -10,12 +10,10 @@ import Observation
 
 @main
 struct APPushupTrackerApp: App {
-    @State private var pushupsChartViewModel = PushupChartViewViewModel()
     
     var body: some Scene {
         WindowGroup {
             TrackerTabBar()
-                .environment(pushupsChartViewModel)
         }
     }
 }
