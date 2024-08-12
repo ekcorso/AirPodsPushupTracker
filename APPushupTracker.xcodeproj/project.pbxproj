@@ -18,6 +18,7 @@
 		FC7B91282BFBEA2600B5D714 /* ExerciseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */; };
 		FC91DF3C2C3B611B00FBB2B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91DF3B2C3B611B00FBB2B7 /* DataStore.swift */; };
 		FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9414942BF8237100692A1F /* ResizingButton.swift */; };
+		FCCE86502C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE864F2C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift */; };
 		FCD9B4DD2C27A09000D616A4 /* DataStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */; };
 		FCDFA4102C55BD8C00C5A425 /* ExerciseSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */; };
 		FCDFA4142C59C25D00C5A425 /* Detector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFA4132C59C25D00C5A425 /* Detector.swift */; };
@@ -50,6 +51,7 @@
 		FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartView.swift; sourceTree = "<group>"; };
 		FC91DF3B2C3B611B00FBB2B7 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		FC9414942BF8237100692A1F /* ResizingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingButton.swift; sourceTree = "<group>"; };
+		FCCE864F2C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewViewModelMock.swift; sourceTree = "<group>"; };
 		FCD9B4D32C27A07F00D616A4 /* APPushupTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APPushupTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTests.swift; sourceTree = "<group>"; };
 		FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSelectionViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		FCD9B4D42C27A07F00D616A4 /* APPushupTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
+				FCCE864F2C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift */,
 				FCD9B4DC2C27A09000D616A4 /* DataStorageTests.swift */,
 			);
 			path = APPushupTrackerTests;
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCE86502C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift in Sources */,
 				FCD9B4DD2C27A09000D616A4 /* DataStorageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
