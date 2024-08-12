@@ -8,9 +8,8 @@
 import SwiftUI
 import Charts
 
-// Rename to ChartView? Need to inject model type...
 struct ExerciseChartView: View {
-    @State private var viewModel = PushupChartViewViewModel()
+    @State private var viewModel = ExerciseChartViewViewModel()
     
     var body: some View {
         VStack {

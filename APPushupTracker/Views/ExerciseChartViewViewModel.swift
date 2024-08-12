@@ -1,5 +1,5 @@
 //
-//  PushupChartViewViewModel.swift
+//  ExerciseChartViewViewModel.swift
 //  APPushupTracker
 //
 //  Created by Emily Corso on 5/30/24.
@@ -9,9 +9,10 @@ import Foundation
 import Observation
 
 @Observable
-class PushupChartViewViewModel {
+class ExerciseChartViewViewModel {
     let dataStore: DataStore = DataStore.shared
     
+    // Can I cap the size of this array at 3 exercises?
     var selectedExercises: [Exercise] = [Pushup.shared, Squat.shared] {
         didSet {
             // Is this necessary? Will this trigger the updates in the body property?
@@ -79,6 +80,7 @@ class PushupChartViewViewModel {
         self.squatAvgDownAcceleration = getAvgDownAcceleration(squatAccelerationData)
     }
     
+    // Should the following two funcs be paramaterized to control for which values are thrown out, or can these basic ranges be used for all exercises? Perhaps at least for Squats + Pushups...
     private func getAvgUpAcceleration(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
 

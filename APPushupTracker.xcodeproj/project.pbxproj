@@ -12,7 +12,7 @@
 		FC35A0412BF570E600680D70 /* CountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC35A0402BF570E600680D70 /* CountViewController.swift */; };
 		FC35A0432BF570EA00680D70 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0422BF570EA00680D70 /* Assets.xcassets */; };
 		FC35A0462BF570EB00680D70 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */; };
-		FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */; };
+		FC770BF92C097DA9002B0EE5 /* ExerciseChartViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC770BF82C097DA9002B0EE5 /* ExerciseChartViewViewModel.swift */; };
 		FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91212BFAEDF600B5D714 /* MotionManager.swift */; };
 		FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */; };
 		FC7B91282BFBEA2600B5D714 /* ExerciseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */; };
@@ -44,7 +44,7 @@
 		FC35A0422BF570EA00680D70 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC35A0452BF570EB00680D70 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FC770BF72C07C092002B0EE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushupChartViewViewModel.swift; sourceTree = "<group>"; };
+		FC770BF82C097DA9002B0EE5 /* ExerciseChartViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewViewModel.swift; sourceTree = "<group>"; };
 		FC7B91212BFAEDF600B5D714 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTabBar.swift; sourceTree = "<group>"; };
 		FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartView.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 				FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */,
 				FCDFA40F2C55BD8C00C5A425 /* ExerciseSelectionViewController.swift */,
 				FC9414942BF8237100692A1F /* ResizingButton.swift */,
-				FC770BF82C097DA9002B0EE5 /* PushupChartViewViewModel.swift */,
+				FC770BF82C097DA9002B0EE5 /* ExerciseChartViewViewModel.swift */,
 				FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */,
 			);
 			path = Views;
@@ -265,7 +265,7 @@
 				FCE67EEE2C5D300400C69875 /* Squat.swift in Sources */,
 				FC91DF3C2C3B611B00FBB2B7 /* DataStore.swift in Sources */,
 				FCE67EEA2C5C9CB500C69875 /* Exercise.swift in Sources */,
-				FC770BF92C097DA9002B0EE5 /* PushupChartViewViewModel.swift in Sources */,
+				FC770BF92C097DA9002B0EE5 /* ExerciseChartViewViewModel.swift in Sources */,
 				FCE67EEC2C5CA0B400C69875 /* Pushup.swift in Sources */,
 				FC7B91282BFBEA2600B5D714 /* ExerciseChartView.swift in Sources */,
 				FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */,
