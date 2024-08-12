@@ -29,4 +29,16 @@ final class ExerciseChartViewViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(expectedAveragePitch, result)
     }
+        
+    func testGetAveragePitchWithNoData() async throws {
+        // Arrange
+        let pitches = [Double]()
+        let expectedAveragePitch = 0.0
+        
+        // Act
+        let result = mockViewModel.getAveragePitch(pitches)
+        
+        // Assert
+        XCTAssertEqual(expectedAveragePitch, result)
+    }
 }
