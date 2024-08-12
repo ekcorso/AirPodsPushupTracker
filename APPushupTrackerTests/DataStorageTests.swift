@@ -41,4 +41,28 @@ final class ExerciseChartViewViewModelTests: XCTestCase {
         // Assert
         XCTAssertEqual(expectedAveragePitch, result)
     }
+    
+    func testInitializeViewModelWithNoSelectedExercises() async throws {
+        
+        XCTAssertEqual(mockViewModel.updatePushupDataCallCount, 0)
+    }
+    
+    func testInitializeViewModelWithPushupsSelected() async throws {
+        // Act
+        mockViewModel.selectedExercises = [Pushup.shared]
+        
+        // Assert
+        XCTAssertEqual(mockViewModel.updatePushupDataCallCount, 1)
+        XCTAssertEqual(mockViewModel.updateSquatDataCallCount, 0)
+
+    }
+    
+    func testInitializeViewModelWithSquatsSelected() async throws {
+        // Act
+        mockViewModel.selectedExercises = [Squat.shared]
+        
+        // Assert
+        XCTAssertEqual(mockViewModel.updateSquatDataCallCount, 1)
+        XCTAssertEqual(mockViewModel.updatePushupDataCallCount, 0)
+    }
 }
