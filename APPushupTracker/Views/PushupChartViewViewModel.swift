@@ -12,15 +12,29 @@ import Observation
 class PushupChartViewViewModel {
     let dataStore: DataStore = DataStore.shared
     
-    var avgPitch: Double = 0
-    var avgUpAcceleration: Double = 0
-    var avgDownAcceleration: Double = 0
+    var selectedExercises: [Exercise] = [Pushup.shared, Squat.shared] {
+        didSet {
+            // Is this necessary? Will this trigger the updates in the body property?
+            updateAveragesForSelectedExercises()
+        }
+    }
     
-    var accelerationData: [Double] = [0.0]
-    var pitchData: [Double] = [0.0]
-
+    var pushupAccelerationData: [Double] = [0.0]
+    var pushupPitchData: [Double] = [0.0]
+    
+    var pushupAvgPitch: Double = 0
+    var pushupAvgUpAcceleration: Double = 0
+    var pushupAvgDownAcceleration: Double = 0
+    
+    var squatAccelerationData: [Double] = [0.0]
+    var squatPitchData: [Double] = [0.0]
+    
+    var squatAvgPitch: Double = 0
+    var squatAvgUpAcceleration: Double = 0
+    var squatAvgDownAcceleration: Double = 0
+    
     init() {
-        self.updateAllProperties()
+        self.updateAveragesForSelectedExercises()
     }
     
     func getAveragePitch(_ data: [Double]) -> Double {
@@ -32,13 +46,37 @@ class PushupChartViewViewModel {
         return Double(pitchSum/pitchCount)
     }
     
-    func updateAllProperties() {
-        self.accelerationData = dataStore.retrievePushupAccelerationData() ?? [Double]()
-        self.pitchData = dataStore.retrievePushupAccelerationData() ?? [Double]()
+    func updateAveragesForSelectedExercises() {
+        guard selectedExercises.count != 0 else { return }
         
-        self.avgPitch = getAveragePitch(pitchData)
-        self.avgUpAcceleration = getAvgUpAcceleration(accelerationData)
-        self.avgDownAcceleration = getAvgDownAcceleration(accelerationData)
+        for exercise in selectedExercises {
+            switch exercise {
+            case is Pushup:
+                updatePushupData()
+            case is Squat:
+                updateSquatData()
+            default:
+                fatalError("Can't update data-- Exercise type not found.")
+            }
+        }
+    }
+    
+    func updatePushupData() {
+        self.pushupAccelerationData = dataStore.retrievePushupAccelerationData() ?? [Double]()
+        self.pushupPitchData = dataStore.retrievePushupPitchData() ?? [Double]()
+        
+        self.pushupAvgPitch = getAveragePitch(pushupPitchData)
+        self.pushupAvgUpAcceleration = getAvgUpAcceleration(pushupAccelerationData)
+        self.pushupAvgDownAcceleration = getAvgDownAcceleration(pushupAccelerationData)
+    }
+    
+    func updateSquatData() {
+        self.squatAccelerationData = dataStore.retrieveSquatAccelerationData() ?? [Double]()
+        self.squatPitchData = dataStore.retrieveSquatPitchData() ?? [Double]()
+        
+        self.squatAvgPitch = getAveragePitch(squatPitchData)
+        self.squatAvgUpAcceleration = getAvgUpAcceleration(squatAccelerationData)
+        self.squatAvgDownAcceleration = getAvgDownAcceleration(squatAccelerationData)
     }
     
     private func getAvgUpAcceleration(_ data: [Double]) -> Double {

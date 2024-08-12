@@ -14,20 +14,20 @@ struct ExerciseChartView: View {
     
     var body: some View {
         VStack {
-            Text("Average pitch: \(decimalFormatter.string(from: viewModel.avgPitch))")
+            Text("Average pitch: \(decimalFormatter.string(from: viewModel.pushupAvgPitch))")
                 .padding(10)
-            Text("Average acceleration up: \(decimalFormatter.string(from: viewModel.avgUpAcceleration))")
+            Text("Average acceleration up: \(decimalFormatter.string(from: viewModel.pushupAvgUpAcceleration))")
                 .padding(10)
-            Text("Average acceleration down: \(decimalFormatter.string(from: viewModel.avgDownAcceleration))")
+            Text("Average acceleration down: \(decimalFormatter.string(from: viewModel.pushupAvgDownAcceleration))")
                 .padding(10)
             Button("Print data") {
-                print("The averagePitch is: \(viewModel.avgPitch)")
-                print("The pitchData is: \(viewModel.pitchData)")
-                print("The accelerationData is: \(viewModel.accelerationData)")
+                print("The averagePitch is: \(viewModel.pushupAvgPitch)")
+                print("The pitchData is: \(viewModel.pushupPitchData)")
+                print("The accelerationData is: \(viewModel.pushupAccelerationData)")
             }
             Text("Acceleration Data")
             Chart {
-                ForEach(Array(zip(viewModel.accelerationData.indices, viewModel.accelerationData)), id: \.0) { item in
+                ForEach(Array(zip(viewModel.pushupAccelerationData.indices, viewModel.pushupAccelerationData)), id: \.0) { item in
                     LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1))
                 }
             }
@@ -36,7 +36,7 @@ struct ExerciseChartView: View {
             }
         }
         .onAppear {
-            viewModel.updateAllProperties()
+            viewModel.updateAveragesForSelectedExercises()
         }
     }
 }
