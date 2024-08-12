@@ -13,7 +13,7 @@ class ExerciseChartViewViewModel {
     let dataStore: DataStore = DataStore.shared
     
     // Can I cap the size of this array at 3 exercises?
-    var selectedExercises: [Exercise] = [Pushup.shared, Squat.shared] {
+    var selectedExercises: [Exercise] = [Exercise]() {
         didSet {
             // Is this necessary? Will this trigger the updates in the body property?
             updateAveragesForSelectedExercises()
