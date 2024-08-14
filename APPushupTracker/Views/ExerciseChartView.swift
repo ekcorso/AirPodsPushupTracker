@@ -24,6 +24,37 @@ struct ExerciseChartView: View {
                 print("The pitchData is: \(viewModel.pushupPitchData)")
                 print("The accelerationData is: \(viewModel.pushupAccelerationData)")
             }
+            
+            HStack {
+                Button("Pushups") {
+                    viewModel.selectedExercises.append(Pushup.shared)
+                }
+                .padding(10)
+                .font(.headline)
+                .foregroundStyle(.white)
+                .background(Pushup.shared.signatureColor)
+                .clipShape(.buttonBorder)
+                
+                Button("Squats") {
+                    viewModel.selectedExercises.append(Squat.shared)
+                }
+                .padding(10)
+                .font(.headline)
+                .foregroundStyle(.white)
+                .background(Squat.shared.signatureColor)
+                .clipShape(.buttonBorder)
+
+                Button("Situps") {
+//                    viewModel.selectedExercises.append(Situp.shared)
+                }
+                .disabled(true)
+                .padding(10)
+                .font(.headline)
+                .foregroundStyle(.white)
+                .background(.orange)
+                .clipShape(.buttonBorder)
+            }
+            
             Text("Acceleration Data")
             Chart {
                 ForEach(Array(zip(viewModel.pushupAccelerationData.indices, viewModel.pushupAccelerationData)), id: \.0) { item in
