@@ -28,15 +28,15 @@ struct ExerciseSelectionViewController: View {
                     
                     NavigationLink(destination: CountViewController(with: squat), isActive: $isShowingSquatCountView) { EmptyView() }
                     
-                    ResizingButton(backgroundColor: pushup.signatureColor, foregroundColor: .white, title: pushup.name, maxWidth: $maxWidth) {
+                    ResizingButton(title: pushup.name, maxWidth: $maxWidth) {
                         self.isShowingPushupCountView = true
                     }
                     
-                    ResizingButton(backgroundColor: squat.signatureColor, foregroundColor: .white, title: squat.name, maxWidth: $maxWidth) {
+                    ResizingButton(title: squat.name, maxWidth: $maxWidth) {
                         self.isShowingSquatCountView = true
                     }
                     
-                    ResizingButton(backgroundColor: .orange, foregroundColor: .white, title: "Situps", maxWidth: $maxWidth) {
+                    ResizingButton(title: "Situps", maxWidth: $maxWidth) {
                         // Button action not set
                     }
                 }
