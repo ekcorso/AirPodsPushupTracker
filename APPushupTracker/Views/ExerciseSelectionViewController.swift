@@ -31,14 +31,20 @@ struct ExerciseSelectionViewController: View {
                     ResizingButton(title: pushup.name, maxWidth: $maxWidth) {
                         self.isShowingPushupCountView = true
                     }
+                    .buttonStyle(.filledCapsule)
+                    .tint(Pushup.shared.signatureColor)
                     
                     ResizingButton(title: squat.name, maxWidth: $maxWidth) {
                         self.isShowingSquatCountView = true
                     }
+                    .buttonStyle(.filledCapsule)
+                    .tint(Squat.shared.signatureColor)
                     
                     ResizingButton(title: "Situps", maxWidth: $maxWidth) {
                         // Button action not set
                     }
+                    .buttonStyle(.ghost)
+                    .tint(.orange) // TODO: replace with signature color when Pushup is created
                 }
                 .navigationTitle("Exercise Options")
             }

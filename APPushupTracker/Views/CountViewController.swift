@@ -62,9 +62,12 @@ struct CountViewController: View {
             
             VStack(spacing: 10) {
                 ResizingButton(title: "Start Counting", maxWidth: $maxWidth, action: startCounting)
+                    .buttonStyle(.filledCapsule)
+                    .tint(exercise.signatureColor)
                 // Let's deactivate this button if the session is already active
                 
                 ResizingButton(title: "Stop", maxWidth: $maxWidth, action: stopCounting)
+                    .buttonStyle(.ghost)
                 // Let's deactivate this button if the session has not started yet
             }
         }
