@@ -37,12 +37,8 @@ struct ExerciseChartView: View {
                     }
                     self.pushupIsSelected.toggle()
                 }
-                .padding(10)
-                .font(.headline)
-                .foregroundStyle(.white)
-                .background(Pushup.shared.signatureColor)
-                .clipShape(.buttonBorder)
-                
+                .buttonStyle(.selectable(isSelected: pushupIsSelected))
+
                 Button("Squats") {
                     if squatIsSelected {
                         let exercisesWithoutSquat = viewModel.selectedExercises.filter({ $0 is Squat })
@@ -52,11 +48,7 @@ struct ExerciseChartView: View {
                     }
                     self.squatIsSelected.toggle()
                 }
-                .padding(10)
-                .font(.headline)
-                .foregroundStyle(.white)
-                .background(Squat.shared.signatureColor)
-                .clipShape(.buttonBorder)
+                .buttonStyle(.selectable(isSelected: squatIsSelected))
 
                 Button("Situps") {
 //                    viewModel.selectedExercises.append(Situp.shared)
