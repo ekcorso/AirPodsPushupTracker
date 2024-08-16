@@ -12,6 +12,8 @@ struct ExerciseChartView: View {
     @State private var viewModel = ExerciseChartViewViewModel()
     @State private var pushupIsSelected = false
     @State private var squatIsSelected = false
+    @State private var situpIsSelected = false
+
     
     var body: some View {
         VStack {
@@ -53,12 +55,8 @@ struct ExerciseChartView: View {
                 Button("Situps") {
 //                    viewModel.selectedExercises.append(Situp.shared)
                 }
-                .disabled(true)
-                .padding(10)
-                .font(.headline)
-                .foregroundStyle(.white)
-                .background(.orange)
-                .clipShape(.buttonBorder)
+//                .buttonStyle(.selectable(isSelected: situpIsSelected)
+                .buttonStyle(.ghost)
             }
             
             Text("Acceleration Data")
