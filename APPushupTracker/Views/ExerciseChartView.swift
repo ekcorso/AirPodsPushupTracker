@@ -80,7 +80,7 @@ struct ExerciseChartView: View {
             }
         }
         .onAppear {
-            viewModel.updateAveragesForSelectedExercises()
+            viewModel.refreshDataForSelectedExercises()
         }
     }
 }

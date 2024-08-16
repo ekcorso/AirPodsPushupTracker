@@ -16,7 +16,7 @@ class ExerciseChartViewViewModel {
     var selectedExercises: [Exercise] = [Exercise]() {
         didSet {
             // Is this necessary? Will this trigger the updates in the body property?
-            updateAveragesForSelectedExercises()
+            refreshDataForSelectedExercises()
         }
     }
     
@@ -35,7 +35,7 @@ class ExerciseChartViewViewModel {
     var squatAvgDownAcceleration: Double = 0
     
     init() {
-        self.updateAveragesForSelectedExercises()
+        self.refreshDataForSelectedExercises()
     }
     
     func getAveragePitch(_ data: [Double]) -> Double {
@@ -47,7 +47,8 @@ class ExerciseChartViewViewModel {
         return Double(pitchSum/pitchCount)
     }
     
-    func updateAveragesForSelectedExercises() {
+    // Rename to refreshDataForSelectedExercises
+    func refreshDataForSelectedExercises() {
         guard selectedExercises.count != 0 else { return }
         
         for exercise in selectedExercises {
