@@ -40,6 +40,7 @@ struct ExerciseChartView: View {
                     self.pushupIsSelected.toggle()
                 }
                 .buttonStyle(.selectable(isSelected: pushupIsSelected))
+                .tint(Pushup.shared.signatureColor)
 
                 Button("Squats") {
                     if squatIsSelected {
@@ -51,12 +52,14 @@ struct ExerciseChartView: View {
                     self.squatIsSelected.toggle()
                 }
                 .buttonStyle(.selectable(isSelected: squatIsSelected))
+                .tint(Squat.shared.signatureColor)
 
                 Button("Situps") {
 //                    viewModel.selectedExercises.append(Situp.shared)
                 }
 //                .buttonStyle(.selectable(isSelected: situpIsSelected)
                 .buttonStyle(.ghost)
+                .tint(.orange) // TODO: set this with signature color when Situp class is created
             }
             
             Text("Acceleration Data")
