@@ -10,6 +10,8 @@ import Charts
 
 struct ExerciseChartView: View {
     @State private var viewModel = ExerciseChartViewViewModel()
+    @State private var pushupIsSelected = false
+    @State private var squatIsSelected = false
     
     var body: some View {
         VStack {
@@ -27,7 +29,13 @@ struct ExerciseChartView: View {
             
             HStack {
                 Button("Pushups") {
-                    viewModel.selectedExercises.append(Pushup.shared)
+                    if pushupIsSelected {
+                        let exercisesWithoutPushup = viewModel.selectedExercises.filter({ $0 is Pushup })
+                        viewModel.selectedExercises = exercisesWithoutPushup
+                    } else {
+                        viewModel.selectedExercises.append(Pushup.shared)
+                    }
+                    self.pushupIsSelected.toggle()
                 }
                 .padding(10)
                 .font(.headline)
@@ -36,7 +44,13 @@ struct ExerciseChartView: View {
                 .clipShape(.buttonBorder)
                 
                 Button("Squats") {
-                    viewModel.selectedExercises.append(Squat.shared)
+                    if squatIsSelected {
+                        let exercisesWithoutSquat = viewModel.selectedExercises.filter({ $0 is Squat })
+                        viewModel.selectedExercises = exercisesWithoutSquat
+                    } else {
+                        viewModel.selectedExercises.append(Squat.shared)
+                    }
+                    self.squatIsSelected.toggle()
                 }
                 .padding(10)
                 .font(.headline)
