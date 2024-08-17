@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ResizingButton: View {
     // This button will resize to fit the button(s) next to it
-    @State private var title: String
+    @Binding private var title: String
     @Binding private var maxWidth: CGFloat
     @State private var action: () -> Void
     
@@ -21,8 +21,8 @@ struct ResizingButton: View {
         }.id(maxWidth)
     }
     
-    init(title: String, maxWidth: Binding<CGFloat>, action: @escaping () -> Void) {
-        self.title = title
+    init(title: Binding<String>, maxWidth: Binding<CGFloat>, action: @escaping () -> Void) {
+        self._title = title
         self._maxWidth = maxWidth
         self.action = action
     }
@@ -40,5 +40,6 @@ struct ResizingButton: View {
 
 #Preview {
     @State var localMaxWidth: CGFloat = 100
-    return ResizingButton(title: "Test", maxWidth: $localMaxWidth, action: {}).tint(.pink)
+    @State var testTitle = "Test"
+    return ResizingButton(title: $testTitle, maxWidth: $localMaxWidth, action: {}).tint(.pink)
 }

@@ -19,6 +19,11 @@ struct CountViewController: View {
     
     @State private var maxWidth: CGFloat = .zero
     
+    @State private var isButtonSelected: Bool = false
+    @State private var buttonTitle: String = "Start Counting"
+    private var startButtonTitle = "Start Counting"
+    private var stopButtonTitle = "Stop Counting"
+    
     private let exercise: Exercise
     
     private let startText = "Press start to begin"
@@ -61,14 +66,15 @@ struct CountViewController: View {
                 .padding(15)
             
             VStack(spacing: 10) {
-                ResizingButton(title: "Start Counting", maxWidth: $maxWidth, action: startCounting)
-                    .buttonStyle(.filledCapsule)
+                ResizingButton(title: $buttonTitle,
+                               maxWidth: $maxWidth) {
+                    isButtonSelected ? startCounting() : stopCounting()
+                    buttonTitle = isButtonSelected ? stopButtonTitle : startButtonTitle
+                    
+                    isButtonSelected.toggle()
+                }
+                    .buttonStyle(.selectable(isSelected: isButtonSelected))
                     .tint(exercise.signatureColor)
-                // Let's deactivate this button if the session is already active
-                
-                ResizingButton(title: "Stop", maxWidth: $maxWidth, action: stopCounting)
-                    .buttonStyle(.ghost)
-                // Let's deactivate this button if the session has not started yet
             }
         }
     }

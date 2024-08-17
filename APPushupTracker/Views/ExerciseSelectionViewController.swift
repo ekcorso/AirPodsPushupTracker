@@ -11,9 +11,13 @@ struct ExerciseSelectionViewController: View {
     @State private var maxWidth: CGFloat = .zero
     @State private var isShowingPushupCountView = false
     @State private var isShowingSquatCountView = false
-   
+    @State private var pushupButtonTitle = Pushup.shared.name
+    @State private var squatButtonTitle = Squat.shared.name
+    @State private var situpButtonTitle = "Situps"
+    
     let pushup = Pushup.shared
     let squat = Squat.shared
+
     
     var body: some View {
         NavigationStack {
@@ -28,19 +32,19 @@ struct ExerciseSelectionViewController: View {
                     
                     NavigationLink(destination: CountViewController(with: squat), isActive: $isShowingSquatCountView) { EmptyView() }
                     
-                    ResizingButton(title: pushup.name, maxWidth: $maxWidth) {
+                    ResizingButton(title: $pushupButtonTitle, maxWidth: $maxWidth) {
                         self.isShowingPushupCountView = true
                     }
                     .buttonStyle(.filledCapsule)
                     .tint(Pushup.shared.signatureColor)
                     
-                    ResizingButton(title: squat.name, maxWidth: $maxWidth) {
+                    ResizingButton(title: $squatButtonTitle, maxWidth: $maxWidth) {
                         self.isShowingSquatCountView = true
                     }
                     .buttonStyle(.filledCapsule)
                     .tint(Squat.shared.signatureColor)
                     
-                    ResizingButton(title: "Situps", maxWidth: $maxWidth) {
+                    ResizingButton(title: $situpButtonTitle, maxWidth: $maxWidth) {
                         // Button action not set
                     }
                     .buttonStyle(.ghost)
