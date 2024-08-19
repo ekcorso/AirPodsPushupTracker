@@ -43,7 +43,7 @@ struct CountViewController: View {
         if detector.isValidPosition {
             text = "You're ready 😎"
         } else {
-            text = "Get in position for \(exercise)!"
+            text = "Get in position for \(exercise.name)!"
         }
         
         return text
