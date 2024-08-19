@@ -64,8 +64,18 @@ struct ExerciseChartView: View {
             
             Text("Acceleration Data")
             Chart {
-                ForEach(Array(zip(viewModel.pushupAccelerationData.indices, viewModel.pushupAccelerationData)), id: \.0) { item in
-                    LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1))
+                if pushupIsSelected {
+                    ForEach(Array(zip(viewModel.pushupAccelerationData.indices, viewModel.pushupAccelerationData)), id: \.0) { item in
+                        LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1), series: .value("Pushups", "One"))
+                            .foregroundStyle(Pushup.shared.signatureColor)
+                    }
+                }
+                
+                if squatIsSelected {
+                    ForEach(Array(zip(viewModel.squatAccelerationData.indices, viewModel.squatAccelerationData)), id: \.0) { item in
+                        LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1), series: .value("Squats", "Two"))
+                            .foregroundStyle(Squat.shared.signatureColor)
+                    }
                 }
             }
             .chartYAxis() {
