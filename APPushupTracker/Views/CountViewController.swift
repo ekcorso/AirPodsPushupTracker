@@ -66,14 +66,14 @@ struct CountViewController: View {
                 .padding(15)
             
             VStack(spacing: 10) {
-                ResizingButton(title: $buttonTitle,
-                               maxWidth: $maxWidth) {
-                    isButtonSelected ? startCounting() : stopCounting()
-                    buttonTitle = isButtonSelected ? stopButtonTitle : startButtonTitle
+                ResizingButton(maxWidth: $maxWidth, action: {
+                    isButtonSelected ? stopCounting() : startCounting()
                     
                     isButtonSelected.toggle()
-                }
-                    .buttonStyle(.selectable(isSelected: isButtonSelected))
+                }, content: {
+                  Text(isButtonSelected ? stopButtonTitle : startButtonTitle)
+                })
+                    .buttonStyle(.selectable(isSelected: !isButtonSelected))
                     .tint(exercise.signatureColor)
             }
         }

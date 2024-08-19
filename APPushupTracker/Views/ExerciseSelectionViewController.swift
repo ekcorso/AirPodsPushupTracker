@@ -11,9 +11,6 @@ struct ExerciseSelectionViewController: View {
     @State private var maxWidth: CGFloat = .zero
     @State private var isShowingPushupCountView = false
     @State private var isShowingSquatCountView = false
-    @State private var pushupButtonTitle = Pushup.shared.name
-    @State private var squatButtonTitle = Squat.shared.name
-    @State private var situpButtonTitle = "Situps"
     
     let pushup = Pushup.shared
     let squat = Squat.shared
@@ -32,21 +29,27 @@ struct ExerciseSelectionViewController: View {
                     
                     NavigationLink(destination: CountViewController(with: squat), isActive: $isShowingSquatCountView) { EmptyView() }
                     
-                    ResizingButton(title: $pushupButtonTitle, maxWidth: $maxWidth) {
+                    ResizingButton(maxWidth: $maxWidth, action: {
                         self.isShowingPushupCountView = true
-                    }
+                    }, content: {
+                        Text(pushup.name)
+                    })
                     .buttonStyle(.filledCapsule)
                     .tint(Pushup.shared.signatureColor)
                     
-                    ResizingButton(title: $squatButtonTitle, maxWidth: $maxWidth) {
+                    ResizingButton(maxWidth: $maxWidth, action: {
                         self.isShowingSquatCountView = true
-                    }
+                    }, content: {
+                        Text(squat.name)
+                    })
                     .buttonStyle(.filledCapsule)
                     .tint(Squat.shared.signatureColor)
                     
-                    ResizingButton(title: $situpButtonTitle, maxWidth: $maxWidth) {
+                    ResizingButton(maxWidth: $maxWidth, action: {
                         // Button action not set
-                    }
+                    }, content: {
+                        Text("Situps")
+                    })
                     .buttonStyle(.ghost)
                     .tint(.orange) // TODO: replace with signature color when Pushup is created
                 }
