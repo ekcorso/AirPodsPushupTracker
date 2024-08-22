@@ -9,7 +9,7 @@ import XCTest
 @testable import APPushupTracker
 
 final class ExerciseChartViewViewModelTests: XCTestCase {
-    let mockViewModel = ExerciseChartViewViewModelMock()
+    private let mockViewModel = ExerciseChartViewViewModelMock()
     
     override func setUp() {
     }
