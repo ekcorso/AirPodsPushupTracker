@@ -74,6 +74,10 @@ struct CountViewController: View {
                     .tint(exercise.signatureColor)
             }
         }
+        .onDisappear() {
+            stopCounting()
+            isButtonSelected = false
+        }
     }
     
     private func startCounting() {
