@@ -19,7 +19,7 @@ class Detector {
 
     var downThreshold: Double = 0
     var upThreshold: Double = 0
-    var proneThreshold: Double = 0
+    var pitchThreshold: Double = 0
     
     var isUpwardPhase = false
 
@@ -44,21 +44,21 @@ class Detector {
             let pushup = Pushup.shared
             self.downThreshold = pushup.downAccelerationThreshold
             self.upThreshold = pushup.upAccelerationThreshold
-            self.proneThreshold = pushup.pitchThreshold
+            self.pitchThreshold = pushup.pitchThreshold
         case is Squat:
             let squat = Squat.shared
             self.downThreshold = squat.downAccelerationThreshold
             self.upThreshold = squat.upAccelerationThreshold
-            self.proneThreshold = squat.pitchThreshold
+            self.pitchThreshold = squat.pitchThreshold
         case is Burpee:
             let burpee = Burpee.shared
             self.downThreshold = burpee.downAccelerationThreshold
             self.upThreshold = burpee.upAccelerationThreshold
-            self.proneThreshold = burpee.pitchThreshold
+            self.pitchThreshold = burpee.pitchThreshold
         default:
             self.downThreshold = 0
             self.upThreshold = 0
-            self.proneThreshold = 0
+            self.pitchThreshold = 0
         }
     }
     
@@ -165,6 +165,6 @@ extension Detector: MotionManagerDelegate {
     func didUpdatePitch(_ pitch: Double) {
         pitchData.append(pitch)
 
-        isValidPosition = pitch < proneThreshold
+        isValidPosition = pitch < pitchThreshold
     }
 }
