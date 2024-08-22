@@ -16,6 +16,7 @@
 		FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91212BFAEDF600B5D714 /* MotionManager.swift */; };
 		FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */; };
 		FC7B91282BFBEA2600B5D714 /* ExerciseChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */; };
+		FC8EF2662C77A98D0099DC44 /* Burpee.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8EF2652C77A98C0099DC44 /* Burpee.swift */; };
 		FC91DF3C2C3B611B00FBB2B7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC91DF3B2C3B611B00FBB2B7 /* DataStore.swift */; };
 		FC9414952BF8237100692A1F /* ResizingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9414942BF8237100692A1F /* ResizingButton.swift */; };
 		FCCE86502C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCE864F2C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift */; };
@@ -50,6 +51,7 @@
 		FC7B91212BFAEDF600B5D714 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		FC7B91252BFBDDFF00B5D714 /* TrackerTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerTabBar.swift; sourceTree = "<group>"; };
 		FC7B91272BFBEA2600B5D714 /* ExerciseChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartView.swift; sourceTree = "<group>"; };
+		FC8EF2652C77A98C0099DC44 /* Burpee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burpee.swift; sourceTree = "<group>"; };
 		FC91DF3B2C3B611B00FBB2B7 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		FC9414942BF8237100692A1F /* ResizingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizingButton.swift; sourceTree = "<group>"; };
 		FCCE864F2C6AAFAB00C7AAB6 /* ExerciseChartViewViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChartViewViewModelMock.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			children = (
 				FCE67EE92C5C9CB500C69875 /* Exercise.swift */,
 				FCE67EEB2C5CA0B400C69875 /* Pushup.swift */,
+				FC8EF2652C77A98C0099DC44 /* Burpee.swift */,
 				FCE67EED2C5D300400C69875 /* Squat.swift */,
 			);
 			path = Models;
@@ -279,6 +282,7 @@
 				FC33C8182C39EB2A00CD0008 /* NumberFormatter+Extensions.swift in Sources */,
 				FC7B91262BFBDDFF00B5D714 /* TrackerTabBar.swift in Sources */,
 				FC7B91222BFAEDF600B5D714 /* MotionManager.swift in Sources */,
+				FC8EF2662C77A98D0099DC44 /* Burpee.swift in Sources */,
 				FCDFA4142C59C25D00C5A425 /* Detector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
