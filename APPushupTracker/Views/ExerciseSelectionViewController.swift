@@ -39,7 +39,7 @@ struct ExerciseSelectionViewController: View {
                         Text(pushup.name)
                     })
                     .buttonStyle(.filledCapsule)
-                    .tint(Pushup.shared.signatureColor)
+                    .tint(pushup.signatureColor)
                     
                     ResizingButton(maxWidth: $maxWidth, action: {
                         self.isShowingSquatCountView = true
@@ -47,7 +47,7 @@ struct ExerciseSelectionViewController: View {
                         Text(squat.name)
                     })
                     .buttonStyle(.filledCapsule)
-                    .tint(Squat.shared.signatureColor)
+                    .tint(squat.signatureColor)
                     
                     ResizingButton(maxWidth: $maxWidth, action: {
                         self.isShowingBurpeeCountView = true
