@@ -13,6 +13,9 @@ struct Key {
     
     static let squatAccelerationKey = "squatAccelerationKey"
     static let squatPitchKey = "squatPitchKey"
+    
+    static let burpeeAccelerationKey = "burpeeAccelerationKey"
+    static let burpeePitchKey = "burpeePitchKey"
 }
 
 actor DataStore {
@@ -40,6 +43,14 @@ actor DataStore {
         defaults.setValue(data, forKey: Key.squatAccelerationKey)
     }
     
+    func saveBurpeePitchData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.burpeePitchKey)
+    }
+    
+    func saveBurpeeAccelerationData(_ data: [Double]) {
+        defaults.setValue(data, forKey: Key.burpeeAccelerationKey)
+    }
+    
     nonisolated func retrievePushupPitchData() -> [Double]? {
         return UserDefaults.standard.array(forKey: Key.pushupPitchDataKey) as? [Double]
     }
@@ -54,5 +65,13 @@ actor DataStore {
     
     nonisolated func retrieveSquatAccelerationData() -> [Double]? {
         return UserDefaults.standard.array(forKey: Key.squatAccelerationKey) as? [Double]
+    }
+    
+    nonisolated func retrieveBurpeePitchData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.burpeePitchKey) as? [Double]
+    }
+    
+    nonisolated func retrieveBurpeeAccelerationData() -> [Double]? {
+        return UserDefaults.standard.array(forKey: Key.burpeeAccelerationKey) as? [Double]
     }
 }
