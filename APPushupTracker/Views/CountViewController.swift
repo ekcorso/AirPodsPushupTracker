@@ -11,12 +11,6 @@ import AVFoundation
 struct CountViewController: View {
     @State private var detector: Detector
     
-    @State private var pushupCount = 8 {
-        didSet {
-            AudioServicesPlaySystemSound(1103)
-        }
-    }
-    
     @State private var maxWidth: CGFloat = .zero
     
     @State private var isButtonSelected: Bool = false
