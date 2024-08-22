@@ -23,12 +23,6 @@ struct ExerciseChartView: View {
                 .padding(10)
             Text("Average acceleration down: \(decimalFormatter.string(from: viewModel.pushupAvgDownAcceleration))")
                 .padding(10)
-            Button("Print data") {
-                print("The averagePitch is: \(viewModel.pushupAvgPitch)")
-                print("The pitchData is: \(viewModel.pushupPitchData)")
-                print("The accelerationData is: \(viewModel.pushupAccelerationData)")
-            }
-            
             HStack {
                 Button("Pushups") {
                     if pushupIsSelected {
