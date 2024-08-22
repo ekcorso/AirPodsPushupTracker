@@ -20,9 +20,10 @@ struct ExerciseSelectionViewController: View {
         NavigationStack {
             VStack {
                 Text("Select an exercise")
-                    .padding(30)
                     .font(.title)
-                
+                    .fontWeight(.medium)
+                    .padding(30)
+
                 VStack(spacing: 15) {
                     // TODO: Transisiton to new NavLink initializer when removing support for iOS 15
                     NavigationLink(destination: CountViewController(with: pushup), isActive: $isShowingPushupCountView) { EmptyView() }
@@ -51,9 +52,8 @@ struct ExerciseSelectionViewController: View {
                         Text("Situps")
                     })
                     .buttonStyle(.ghost)
-                    .tint(.orange) // TODO: replace with signature color when Pushup is created
+                    .tint(.orange) // TODO: replace with signature color when Situp is created
                 }
-                .navigationTitle("Exercise Options")
             }
         }
     }

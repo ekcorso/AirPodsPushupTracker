@@ -53,6 +53,9 @@ struct CountViewController: View {
             Group {
                 Text(instructionText)
             }
+            .font(.title2)
+            .fontWeight(.medium)
+            
             Text("\(detector.count)")
                 .font(.system(size: 120))
                 .lineLimit(1)
