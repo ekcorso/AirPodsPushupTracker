@@ -50,6 +50,11 @@ class Detector {
             self.downThreshold = squat.downAccelerationThreshold
             self.upThreshold = squat.upAccelerationThreshold
             self.proneThreshold = squat.pitchThreshold
+        case is Burpee:
+            let burpee = Burpee.shared
+            self.downThreshold = burpee.downAccelerationThreshold
+            self.upThreshold = burpee.upAccelerationThreshold
+            self.proneThreshold = burpee.pitchThreshold
         default:
             self.downThreshold = 0
             self.upThreshold = 0
@@ -68,6 +73,8 @@ class Detector {
             initializePushupData()
         case is Squat:
             initializeSquatData()
+        case is Burpee:
+            initializeBurpeeData()
         default:
             fatalError("Could not initialize movement data. Exercise type is not recognized.")
         }
@@ -83,12 +90,19 @@ class Detector {
         pitchData = dataStore.retrieveSquatPitchData() ?? [Double]()
     }
     
+    func initializeBurpeeData() {
+        accelerationData = dataStore.retrieveBurpeeAccelerationData() ?? [Double]()
+        pitchData = dataStore.retrieveBurpeePitchData() ?? [Double]()
+    }
+    
     func saveData() async {
         switch exerciseType {
         case is Pushup:
             await savePushupData()
         case is Squat:
             await saveSquatData()
+        case is Burpee:
+            await saveBurpeeData()
         default:
             fatalError("Could not save. Exercise type is not recognized.")
         }
@@ -102,6 +116,11 @@ class Detector {
     func saveSquatData() async {
         await dataStore.saveSquatPitchData(pitchData)
         await dataStore.saveSquatAccelerationData(accelerationData)
+    }
+    
+    func saveBurpeeData() async {
+        await dataStore.saveBurpeePitchData(pitchData)
+        await dataStore.saveBurpeeAccelerationData(accelerationData)
     }
     
     func startSession() {
