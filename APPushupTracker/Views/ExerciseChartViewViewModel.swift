@@ -34,6 +34,13 @@ class ExerciseChartViewViewModel {
     var squatAvgUpAcceleration: Double = 0
     var squatAvgDownAcceleration: Double = 0
     
+    var burpeeAccelerationData: [Double] = [0.0]
+    var burpeePitchData: [Double] = [0.0]
+    
+    var burpeeAvgPitch: Double = 0
+    var burpeeAvgUpAcceleration: Double = 0
+    var burpeeAvgDownAcceleration: Double = 0
+    
     init() {
         self.refreshDataForSelectedExercises()
     }
@@ -57,6 +64,8 @@ class ExerciseChartViewViewModel {
                 updatePushupData()
             case is Squat:
                 updateSquatData()
+            case is Burpee:
+                updateBurpeeData()
             default:
                 fatalError("Can't update data-- Exercise type not found.")
             }
@@ -81,7 +90,15 @@ class ExerciseChartViewViewModel {
         self.squatAvgDownAcceleration = getAvgDownAcceleration(squatAccelerationData)
     }
     
-    // Should the following two funcs be paramaterized to control for which values are thrown out, or can these basic ranges be used for all exercises? Perhaps at least for Squats + Pushups...
+    func updateBurpeeData() {
+        self.burpeeAccelerationData = dataStore.retrieveBurpeeAccelerationData() ?? [Double]()
+        self.burpeePitchData = dataStore.retrieveBurpeePitchData() ?? [Double]()
+        
+        self.burpeeAvgPitch = getAveragePitch(burpeePitchData)
+        self.burpeeAvgUpAcceleration = getAvgUpAcceleration(burpeeAccelerationData)
+        self.burpeeAvgDownAcceleration = getAvgDownAcceleration(burpeeAccelerationData)
+    }
+    
     private func getAvgUpAcceleration(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
 

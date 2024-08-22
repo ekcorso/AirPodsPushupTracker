@@ -48,12 +48,17 @@ struct ExerciseChartView: View {
                 .buttonStyle(.selectable(isSelected: squatIsSelected))
                 .tint(Squat.shared.signatureColor)
 
-                Button("Situps") {
-//                    viewModel.selectedExercises.append(Situp.shared)
+                Button("\(Burpee.shared.name)") {
+                    if burpeeIsSelected {
+                        let exercisesWithoutBurpee = viewModel.selectedExercises.filter({ $0 is Burpee })
+                        viewModel.selectedExercises = exercisesWithoutBurpee
+                    } else {
+                        viewModel.selectedExercises.append(Burpee.shared)
+                    }
+                    self.burpeeIsSelected.toggle()
                 }
-//                .buttonStyle(.selectable(isSelected: situpIsSelected)
-                .buttonStyle(.ghost)
-                .tint(.orange) // TODO: set this with signature color when Situp class is created
+                .buttonStyle(.selectable(isSelected: burpeeIsSelected))
+                .tint(Burpee.shared.signatureColor)
             }
             
             Text("Acceleration Data")
