@@ -11,10 +11,11 @@ struct ExerciseSelectionViewController: View {
     @State private var maxWidth: CGFloat = .zero
     @State private var isShowingPushupCountView = false
     @State private var isShowingSquatCountView = false
+    @State private var isShowingBurpeeCountView = false
     
     let pushup = Pushup.shared
     let squat = Squat.shared
-
+    let burpee = Burpee.shared
     
     var body: some View {
         NavigationStack {
@@ -29,6 +30,8 @@ struct ExerciseSelectionViewController: View {
                     NavigationLink(destination: CountViewController(with: pushup), isActive: $isShowingPushupCountView) { EmptyView() }
                     
                     NavigationLink(destination: CountViewController(with: squat), isActive: $isShowingSquatCountView) { EmptyView() }
+                    
+                    NavigationLink(destination: CountViewController(with: burpee), isActive: $isShowingBurpeeCountView) { EmptyView() }
                     
                     ResizingButton(maxWidth: $maxWidth, action: {
                         self.isShowingPushupCountView = true
@@ -47,12 +50,12 @@ struct ExerciseSelectionViewController: View {
                     .tint(Squat.shared.signatureColor)
                     
                     ResizingButton(maxWidth: $maxWidth, action: {
-                        // Button action not set
+                        self.isShowingBurpeeCountView = true
                     }, content: {
-                        Text("Situps")
+                        Text("\(burpee.name)")
                     })
-                    .buttonStyle(.ghost)
-                    .tint(.orange) // TODO: replace with signature color when Situp is created
+                    .buttonStyle(.filledCapsule)
+                    .tint(burpee.signatureColor)
                 }
             }
         }
