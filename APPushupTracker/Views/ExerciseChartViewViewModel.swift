@@ -97,7 +97,7 @@ class ExerciseChartViewViewModel {
     private func getAvgDownAcceleration(_ data: [Double]) -> Double {
         guard data.count != 0 else { return 0 }
 
-        let downAccData = data.filter() { $0 <= -0.7 }
+        let downAccData = data.filter() { $0 <= -0.2 }
         // We can throw out 0 here because if the acc is 0 the user isn't moving anyway, so it's not relevant to the rep threshold
         // Throwing out some of the other small values here. didUpdateAccelerationY is very sensitive
 
