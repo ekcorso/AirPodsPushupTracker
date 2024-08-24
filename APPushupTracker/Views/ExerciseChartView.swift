@@ -12,7 +12,7 @@ struct ExerciseChartView: View {
     @State private var viewModel = ExerciseChartViewViewModel()
     @State private var pushupIsSelected = false
     @State private var squatIsSelected = false
-    @State private var situpIsSelected = false
+    @State private var burpeeIsSelected = false
 
     
     var body: some View {
@@ -74,6 +74,13 @@ struct ExerciseChartView: View {
                     ForEach(Array(zip(viewModel.squatAccelerationData.indices, viewModel.squatAccelerationData)), id: \.0) { item in
                         LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1), series: .value("Squats", "Two"))
                             .foregroundStyle(Squat.shared.signatureColor)
+                    }
+                }
+                
+                if burpeeIsSelected {
+                    ForEach(Array(zip(viewModel.burpeeAccelerationData.indices, viewModel.burpeeAccelerationData)), id: \.0) { item in
+                        LineMark(x: .value("Index", item.0), y: .value("Acceleration", item.1), series: .value("Burpees", "Two"))
+                            .foregroundStyle(Burpee.shared.signatureColor)
                     }
                 }
             }
