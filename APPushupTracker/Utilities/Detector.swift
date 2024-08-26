@@ -13,20 +13,21 @@ class Detector {
     var isActive: Bool = false
     var isValidPosition: Bool = false
     var count: Int = 0
-    var dataStore = DataStore.shared
     
-    let motionManager: MotionManager
+    private var dataStore = DataStore.shared
+    
+    private let motionManager: MotionManager
 
-    var downThreshold: Double = 0
-    var upThreshold: Double = 0
-    var pitchThreshold: Double = 0
+    private var downThreshold: Double = 0
+    private var upThreshold: Double = 0
+    private var pitchThreshold: Double = 0
     
-    var isUpwardPhase = false
+    private var isUpwardPhase = false
 
-    var exerciseType: Exercise
+    private var exerciseType: Exercise
     
-    var accelerationData: [Double]
-    var pitchData: [Double]
+    private var accelerationData: [Double]
+    private var pitchData: [Double]
     
     init(for exercise: Exercise) {
         self.exerciseType = exercise
