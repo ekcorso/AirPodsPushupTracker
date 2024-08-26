@@ -11,10 +11,9 @@ import SwiftUI
 class Squat: Exercise {
     static let shared = Squat()
     
-    // TODO: Need to rethink these thresholds for Squats. Currently still detecting pushups
-    var downAccelerationThreshold = -0.7
-    var upAccelerationThreshold = 0.3
-    var pitchThreshold = -0.8
+    var downAccelerationThreshold = -0.35
+    var upAccelerationThreshold = 0.4
+    var pitchThreshold = -0.4
     
     var name = "Squats"
     

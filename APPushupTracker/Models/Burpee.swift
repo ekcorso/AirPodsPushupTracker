@@ -12,9 +12,9 @@ class Burpee: Exercise {
     static let shared = Burpee()
     
     // Guesses at possible thresholds. Needs data.
-    var downAccelerationThreshold = -1.0
-    var upAccelerationThreshold = 0.4
-    var pitchThreshold = -0.4
+    var downAccelerationThreshold = -0.6
+    var upAccelerationThreshold = 0.8
+    var pitchThreshold = 0.0
     
     var name = "Burpees"
     
